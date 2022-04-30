@@ -13,10 +13,12 @@ MEMO: how to express these TypeScript types:
 external make: (
   ~nodes: 'nodes=?,
   ~edges: 'edges=?,
+  ~elements: 'elements=?,
   ~onNodesChange: 'onNodesChange=?,
   ~onEdgesChange: 'onEdgesChange=?,
   ~onConnect: 'onConnect=?,
   ~children: React.element=?,
+  ~connectionLineType: 'connectionLineType=?,
   ~fitView: bool=?,
 ) => React.element = "default"
 
@@ -25,3 +27,6 @@ external applyNodeChanges: (array<'nodeChange>, 'nodes) => 'nodes = "applyNodeCh
 
 @module("react-flow-renderer")
 external applyEdgeChanges: (array<'edgeChange>, 'edges) => 'edges = "applyEdgeChanges"
+
+@module("react-flow-renderer")
+external isNode: ('element) => bool = "isNode"
