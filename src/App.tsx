@@ -1,83 +1,113 @@
-import ReactFlow, { Node, Edge } from 'react-flow-renderer'
-import { data } from './fixtures/ItemData'
-import ELK from 'elkjs/lib/elk.bundled'
+import { data, Sophie2EdgeType, Sophie2ItemType } from './fixtures/ItemData'
 import React from 'react'
+import CytoscapeComponent from 'react-cytoscapejs'
+import Cytoscape from 'cytoscape'
+import coseBilkent from 'cytoscape-cose-bilkent'
 
-console.log(data)
-const allNodes = Object.values(data.items).map((n) => ({
-  id: n['id'],
-  data: { label: n['id'] },
-}))
+Cytoscape.use(coseBilkent)
 
-const allEdges = Object.values(data.edges).map((n) => ({
-  id: n['id'],
-  source: n['from'],
-  target: n['to'],
-}))
+const synthesizableItems = Object.values(data.items).filter(({ isSynthesizable }) => isSynthesizable)
 
-export const nodeWidth = 272
-export const nodeHeight = 36
+const layout = {
+  name: 'cose-bilkent',
+  animate: false,
+  fit: true,
+  nodeDimensionsIncludeLabels: true,
+  randomize: true,
+}
+const style: React.CSSProperties = {
+  width: '100%',
+  height: '500px',
+}
+const stylesheet: Cytoscape.Stylesheet[] = [
+  {
+    selector: 'node',
+    style: {
+      'background-color': '#666',
+      label: 'data(id)',
+    },
+  },
+  {
+    selector: 'edge',
+    style: {
+      width: 3,
+      'line-color': '#ccc',
+      'target-arrow-color': '#ccc',
+      'target-arrow-shape': 'triangle',
+      // MEMO: default 'haystack' curve style does not support arrow
+      'curve-style': 'bezier',
+    },
+  },
+  {
+    selector: '.main-item',
+    style: {
+      'background-color': '#ff75a7',
+    },
+  },
+]
+const collectItemAndEdges: (item: Sophie2ItemType) => [items: Sophie2ItemType[], edges: Sophie2EdgeType[]] = (item) => {
+  const items: Sophie2ItemType[] = []
+  const edges: Sophie2EdgeType[] = []
 
-const generateLayout = async (nodes: Node[], edges: Edge[], direction = 'TB') => {
-  const elk = new ELK()
+  // collect related item and edges
+  const itemCheckList: string[] = [item.id]
+  let itemCheckIndex = 0
+  while (itemCheckIndex <= itemCheckList.length - 1) {
+    const itemId = itemCheckList[itemCheckIndex]
+    items.push(data.items[itemId])
+    ++itemCheckIndex
 
-  const graph = {
-    id: 'root',
-
-    children: nodes.map(({ id }) => ({
-      id,
-      width: nodeWidth,
-      height: nodeHeight,
-    })),
-    edges: edges.map(({ id, source, target }) => ({ id, sources: [source], targets: [target] })),
+    // find edges start with itemId
+    for (const edge of Object.values(data.edges)) {
+      if (edge.source === itemId) {
+        edges.push(edge)
+        if (edge.hasCategory && !items.some((item) => item.id === edge.target)) {
+          items.push(data.items[edge.target])
+        }
+        if (!edge.hasCategory && !itemCheckList.includes(edge.target)) {
+          itemCheckList.push(edge.target)
+        }
+      }
+    }
   }
 
-  const result = await elk.layout(graph, {
-    layoutOptions: {
-      'elk.algorithm': 'layered',
-      // 'elk.direction': 'DOWN',
-      'elk.layered.spacing.edgeEdgeBetweenLayers': '10',
-      'elk.layered.spacing.nodeNodeBetweenLayers': '10',
-    },
-  })
+  return [items, edges]
+}
+const ItemSynthesisGraph: React.FC<{ item: Sophie2ItemType }> = ({ item }) => {
+  const [items, edges] = collectItemAndEdges(item)
+  const elements: Cytoscape.ElementDefinition[] = [
+    ...items.map(({ id, name }) => ({
+      data: { id, label: name },
+      classes: id === item.id ? 'main-item' : undefined,
+    })),
+    ...edges.map(({ source, target }) => ({ data: { source, target } })),
+  ]
 
-  return [
-    nodes.map((n) => {
-      const res = result.children?.find((c) => c.id === n.id)!
-      return {
-        ...n,
-        position: {
-          x: res.x,
-          y: res.y,
-        },
-      }
-    }),
-    edges,
-  ] as [Node[], Edge[]]
+  return (
+    <div
+      style={{
+        border: '1px solid brown',
+        marginBottom: '1em',
+        marginRight: '1em',
+        width: '40vw',
+        display: 'inline-block',
+      }}
+    >
+      <p style={{ paddingLeft: '1em' }}>
+        {item.name}, {item.kind}, [{item.categoryList.join(',')}]
+      </p>
+      <CytoscapeComponent elements={elements} layout={layout} style={style} stylesheet={stylesheet} />
+    </div>
+  )
 }
 
 export const App: React.FC<any> = () => {
-  const [nodes, setNodes] = React.useState<Node[]>([])
-  const [edges, setEdges] = React.useState<Edge[]>([])
-  React.useEffect(() => {
-    generateLayout(allNodes, allEdges).then(([n, e]) => {
-      console.debug('layouted=', n, e)
-      setNodes(n)
-      setEdges(e)
-    })
-  }, [])
   return (
     <div>
-      <div> {`すこぶる可愛い！`} </div>
-      <div
-        style={{
-          height: '1000px',
-          width: '1000px',
-          border: '1px solid black',
-        }}
-      >
-        <ReactFlow fitView={true} nodes={nodes} edges={edges} />
-      </div>
+      <h1 style={{ textAlign: 'center' }}> {`すこぶる可愛い！`} </h1>
+      {synthesizableItems.map((item) => (
+        <ItemSynthesisGraph key={item.id} item={item} />
+      ))}
     </div>
   )
 }
