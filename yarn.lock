@@ -106,6 +106,11 @@
   resolved "https://registry.yarnpkg.com/@rescript/react/-/react-0.10.3.tgz#a2a8bed6b017940ec26c2154764b350f50348889"
   integrity sha512-Lf9rzrR3bQPKJjOK3PBRa/B3xrJ7CqQ1HYr9VHPVxJidarIJJFZBhj0Dg1uZURX+Wg/xiP0PHFxXmdj2bK8Vxw==
 
+"@ryyppy/rescript-promise@2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@ryyppy/rescript-promise/-/rescript-promise-2.1.0.tgz#a33861274c41360cfbe872cf489f3dcb8dd526e6"
+  integrity sha512-+dW6msBrj2Lr2hbEMX+HoWCvN89qVjl94RwbYWJgHQuj8jm/izdPC0YzxgpGoEFdeAEW2sOozoLcYHxT6o5WXQ==
+
 "@tsconfig/node10@^1.0.7":
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/@tsconfig/node10/-/node10-1.0.8.tgz#c1e4e80d6f964fbecb3359c43bd48b40f7cadad9"
@@ -1155,6 +1160,11 @@ electron-to-chromium@^1.4.118:
   version "1.4.126"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.126.tgz#56e9d3cbb658c58b45d05ecfedbcb3b09ab1a2d8"
   integrity sha512-g/e18Yv0fBdN2c2Z8hWV9jOXxOxOByyG8uGufrJWUym+LHMYa5K2oR9C+D8Bvh0slUTarBwBBZFi41ImQjEZIA==
+
+elkjs@next:
+  version "0.7.3-dev"
+  resolved "https://registry.yarnpkg.com/elkjs/-/elkjs-0.7.3-dev.tgz#baaf9ff607576e1ee043a23ac4b4a3b09a21c3e2"
+  integrity sha512-r8rOEyewdpEk60xfxzLjJBgZqdxr+RVBEPam71vF76h+15OF9zkI88HV7WzYl15eqTr0vRo2EwgX0Y8phFXGxQ==
 
 encodeurl@~1.0.2:
   version "1.0.2"
