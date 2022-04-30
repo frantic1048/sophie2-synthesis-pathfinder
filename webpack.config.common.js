@@ -3,10 +3,29 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const InjectBodyPlugin = require('inject-body-webpack-plugin').default
 
 module.exports = {
-  entry: './src/index.bs.js',
+  entry: './src/index.tsx',
   devtool: 'inline-source-map',
   devServer: {
     static: './dist',
+  },
+  resolve: { extensions: ['.js', '.ts', '.tsx'] },
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'swc-loader',
+          options: {
+            jsc: {
+              parser: {
+                syntax: 'typescript',
+              },
+            },
+          },
+        },
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
