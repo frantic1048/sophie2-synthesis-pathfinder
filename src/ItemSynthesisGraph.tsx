@@ -188,7 +188,15 @@ export const ItemSynthesisGraph: React.FC<{ item: Sophie2ItemType }> = ({ item }
       <p style={{ paddingLeft: '1em' }}>
         {item.name}, {item.kind}, [{item.categoryList.join(',')}]
       </p>
-      <CytoscapeComponent elements={elements} layout={layout} style={style} stylesheet={stylesheet} />
+      <CytoscapeComponent
+        elements={elements}
+        layout={layout}
+        style={style}
+        stylesheet={stylesheet}
+        userZoomingEnabled={true}
+        maxZoom={1.5}
+        minZoom={0.2}
+      />
     </div>
   )
 }
