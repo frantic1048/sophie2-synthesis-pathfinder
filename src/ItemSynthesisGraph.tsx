@@ -73,7 +73,6 @@ const stylesheet: Cytoscape.Stylesheet[] = [
   },
 ]
 
-console.log('synthesizableItems', synthesizableItems)
 const collectItemAndEdges: (prop: {
   itemId: Sophie2ItemType['id']
   expandCategory?: boolean
@@ -162,7 +161,6 @@ const collectItemAndEdges: (prop: {
 
 export const ItemSynthesisGraph: React.FC<{ item: Sophie2ItemType }> = ({ item }) => {
   const [items, edges] = collectItemAndEdges({ itemId: item.id, expandCategory: true })
-  console.debug(item, items, edges)
   const elements: Cytoscape.ElementDefinition[] = [
     ...items.map(({ id, name }) => ({
       data: { id, label: name },
