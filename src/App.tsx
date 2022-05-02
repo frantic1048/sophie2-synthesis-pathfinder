@@ -7,7 +7,7 @@ import { ItemSynthesisView } from './ItemSynthesisView'
 cssRule('html', {
   padding: 0,
   margin: 0,
-  fontFamily: `"Viaoda Libre","Noto Serif SC",serif`,
+  fontFamily: `"Noto Serif SC",serif`,
 })
 cssRule('body', {
   margin: 'auto',
@@ -19,7 +19,7 @@ const wrapperClassName = style({
 })
 
 const navClassName = style({
-  width: '14em',
+  width: '18em',
   height: '100vh',
 })
 const itemListClassName = style({
