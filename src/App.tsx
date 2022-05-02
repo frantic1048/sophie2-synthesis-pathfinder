@@ -49,6 +49,9 @@ export const App: React.FC<any> = () => {
         <div className={navLinksClassName}>
           <Link to="/item">item</Link>
           <Link to="/trait">trait</Link>
+          <a href="https://github.com/frantic1048/sophie2-synthesis-pathfinder" target={'_blank'} rel="noreferrer">
+            github
+          </a>
         </div>
         <ul className={itemListClassName}>
           <Routes>
