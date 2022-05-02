@@ -10,5 +10,5 @@ export const ItemSynthesisView: React.FC<any> = () => {
     return <ItemSynthesisGraph itemId={inputItemId} />
   }
 
-  return <Navigate to={`/${synthesizableItems[0].id}`} replace />
+  return <Navigate to={`/item/${synthesizableItems[0].id}`} replace />
 }

@@ -1,11 +1,8 @@
 import { data, isCategoryId, isSynthesizableItem, Sophie2EdgeType, Sophie2ItemType } from './fixtures/ItemData'
 import CytoscapeComponent from 'react-cytoscapejs'
 import Cytoscape from 'cytoscape'
-import coseBilkent from 'cytoscape-cose-bilkent'
 import React from 'react'
 import { style } from 'typestyle'
-
-Cytoscape.use(coseBilkent)
 
 const layout = {
   // FIXME: readable layout......

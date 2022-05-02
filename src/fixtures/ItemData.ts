@@ -15,15 +15,28 @@ export type Sophie2EdgeType = {
   hasCategory?: boolean // is target category
 }
 
+export type Sophie2TraitType = {
+  id: string
+  name: string
+}
+export type Sophie2TraitEdgeType = {
+  id: string
+  source: string
+  target: string
+}
+
 // see cook_sophie2_data.py
 type Sophie2Data = {
-  items: { [key in string]: Sophie2ItemType }
-  edges: { [key in string]: Sophie2EdgeType }
+  items: { [key: string]: Sophie2ItemType }
+  edges: { [key: string]: Sophie2EdgeType }
+  traits: { [key: string]: Sophie2TraitType }
+  traitEdges: { [key: string]: Sophie2TraitEdgeType }
 }
 
 export const data: Sophie2Data = JSON.parse(raw)
 
 export const synthesizableItems = Object.values(data.items).filter(({ isSynthesizable }) => isSynthesizable)
+export const traits = Object.values(data.traits)
 
 // category id: (uni), in Sophie2ItemType.id
 // category name: uni, in Sophie2ItemType.categoryList

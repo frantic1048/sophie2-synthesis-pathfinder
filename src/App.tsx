@@ -1,8 +1,9 @@
-import { synthesizableItems } from './fixtures/ItemData'
+import { synthesizableItems, data, traits } from './fixtures/ItemData'
 import React from 'react'
 import { cssRule, style } from 'typestyle'
 import { Link, Navigate, Route, Routes } from 'react-router-dom'
 import { ItemSynthesisView } from './ItemSynthesisView'
+import { TraitView } from './TraitView'
 
 cssRule('html', {
   padding: 0,
@@ -17,7 +18,15 @@ const wrapperClassName = style({
   display: 'flex',
   flexDirection: 'row',
 })
-
+const headerClassName = style({
+  fontSize: '1.2em',
+  fontWeight: 'bold',
+  textAlign: 'center',
+})
+const navLinksClassName = style({
+  display: 'flex',
+  justifyContent: 'space-around',
+})
 const navClassName = style({
   width: '18em',
   height: '100vh',
@@ -36,19 +45,47 @@ export const App: React.FC<any> = () => {
   return (
     <div className={wrapperClassName}>
       <nav className={navClassName}>
-        <h1 style={{ textAlign: 'center' }}> {`すこぶる可愛い！`} </h1>
+        <header className={headerClassName}> {`すこぶる可愛い！`} </header>
+        <div className={navLinksClassName}>
+          <Link to="/item">item</Link>
+          <Link to="/trait">trait</Link>
+        </div>
         <ul className={itemListClassName}>
-          {synthesizableItemIdList.map((id) => (
-            <li key={id}>
-              <Link to={`/${id}`}>{id}</Link>
-            </li>
-          ))}
+          <Routes>
+            <Route
+              path="/item/*"
+              element={
+                <>
+                  {synthesizableItemIdList.map((id) => (
+                    <li key={id}>
+                      <Link to={`/item/${id}`}>{id}</Link>
+                    </li>
+                  ))}
+                </>
+              }
+            />
+            <Route
+              path="/trait/*"
+              element={
+                <>
+                  {traits.map(({ id }) => (
+                    <li key={id}>
+                      <Link to={`/trait/${id}`}>{id}</Link>
+                    </li>
+                  ))}
+                </>
+              }
+            />
+          </Routes>
         </ul>
       </nav>
       <div className={contentClassName}>
         <Routes>
-          <Route path="/" element={<Navigate to={`/${synthesizableItemIdList[0]}`} replace />} />
-          <Route path="/:itemId" element={<ItemSynthesisView />} />
+          <Route path="/item/:itemId" element={<ItemSynthesisView />} />
+          <Route path="/trait/:traitId" element={<TraitView />} />
+          <Route path="/item" element={<Navigate to={`/item/${synthesizableItemIdList[0]}`} replace />} />
+          <Route path="/trait" element={<Navigate to={`/trait/${traits[0].id}`} replace />} />
+          <Route path="*" element={<Navigate to={`/item/${synthesizableItemIdList[0]}`} replace />} />
         </Routes>
       </div>
     </div>
