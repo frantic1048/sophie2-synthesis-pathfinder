@@ -29,7 +29,7 @@ export const synthesizableItems = Object.values(data.items).filter(({ isSynthesi
 // category name: uni, in Sophie2ItemType.categoryList
 export const categoryIdToName = (categoryId: string): string => categoryId.replace(/^\(/, '').replace(/\)$/, '')
 
-export const isSynthesizableItem = (itemId: string): boolean => data.items[itemId].isSynthesizable
+export const isSynthesizableItem = (itemId: string): boolean => !!data.items[itemId]?.isSynthesizable
 export const isCategoryId = (itemId: string): boolean => itemId.startsWith('(')
 
 // data does not contain category -> () edges

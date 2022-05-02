@@ -1,17 +1,9 @@
-import {
-  categoryIdToName,
-  data,
-  isCategoryId,
-  isSynthesizableItem,
-  makeEdge,
-  Sophie2EdgeType,
-  Sophie2ItemType,
-  synthesizableItems,
-} from './fixtures/ItemData'
+import { data, isCategoryId, isSynthesizableItem, Sophie2EdgeType, Sophie2ItemType } from './fixtures/ItemData'
 import CytoscapeComponent from 'react-cytoscapejs'
 import Cytoscape from 'cytoscape'
 import coseBilkent from 'cytoscape-cose-bilkent'
 import React from 'react'
+import { style } from 'typestyle'
 
 Cytoscape.use(coseBilkent)
 
@@ -23,9 +15,14 @@ const layout = {
   nodeDimensionsIncludeLabels: true,
   circle: true,
 }
-const style: React.CSSProperties = {
+
+const wrapperClassName = style({
+  position: 'relative',
+  height: '98%',
+})
+const cystyle: React.CSSProperties = {
   width: '100%',
-  height: '1000px',
+  height: 'max(800px, calc(100% - 5em))',
 }
 const stylesheet: Cytoscape.Stylesheet[] = [
   {
@@ -162,38 +159,43 @@ const collectItemAndEdges: (prop: {
 
 export const ItemSynthesisGraph: React.FC<{ itemId: Sophie2ItemType['id'] }> = ({ itemId }) => {
   const item = data.items[itemId]
-  const [items, edges] = collectItemAndEdges({ itemId, expandCategory: true })
-  const elements: Cytoscape.ElementDefinition[] = [
-    ...items.map(({ id, name }) => ({
-      data: { id, label: name },
-      classes: [id === itemId && 'main-item', isCategoryId(id) && 'category-item'].filter(Boolean).join(' '),
-    })),
-    ...edges.map(({ source, target }) => ({
-      data: {
-        source,
-        target,
-      },
-      classes: source === itemId ? 'main-edge' : undefined,
-    })),
-  ]
+
+  const cy = React.useRef<Cytoscape.Core>()
+  const handleCyRef = React.useCallback<(cy: Cytoscape.Core) => void>((_cy) => (cy.current = _cy), [])
+  React.useEffect(() => {
+    if (cy.current) {
+      cy.current.layout(layout).run()
+    }
+  }, [itemId])
+  const baseElements = React.useMemo(() => collectItemAndEdges({ itemId, expandCategory: true }), [itemId])
+
+  const elements = React.useMemo<Cytoscape.ElementDefinition[]>(() => {
+    const [items, edges] = baseElements
+    return [
+      ...items.map(({ id, name }) => ({
+        data: { id, label: name },
+        classes: [id === itemId && 'main-item', isCategoryId(id) && 'category-item'].filter(Boolean).join(' '),
+      })),
+      ...edges.map(({ source, target }) => ({
+        data: {
+          source,
+          target,
+        },
+        classes: source === itemId ? 'main-edge' : undefined,
+      })),
+    ]
+  }, [baseElements])
 
   return (
-    <div
-      style={{
-        border: '1px solid brown',
-        marginBottom: '1em',
-        marginRight: '1em',
-        width: '100%',
-        display: 'block',
-      }}
-    >
+    <div className={wrapperClassName}>
       <p style={{ paddingLeft: '1em' }}>
         {item.name}, {item.kind}, [{item.categoryList.join(',')}]
       </p>
       <CytoscapeComponent
+        cy={handleCyRef}
         elements={elements}
         layout={layout}
-        style={style}
+        style={cystyle}
         stylesheet={stylesheet}
         userZoomingEnabled={true}
         maxZoom={1.5}
