@@ -8,5 +8,4 @@
 
 Open two terminal and run:
 
-- `yarn dev:rescript`
 - `yarn dev:webpack`
