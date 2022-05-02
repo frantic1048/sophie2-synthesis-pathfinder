@@ -160,19 +160,20 @@ const collectItemAndEdges: (prop: {
   return [items, edges]
 }
 
-export const ItemSynthesisGraph: React.FC<{ item: Sophie2ItemType }> = ({ item }) => {
-  const [items, edges] = collectItemAndEdges({ itemId: item.id, expandCategory: true })
+export const ItemSynthesisGraph: React.FC<{ itemId: Sophie2ItemType['id'] }> = ({ itemId }) => {
+  const item = data.items[itemId]
+  const [items, edges] = collectItemAndEdges({ itemId, expandCategory: true })
   const elements: Cytoscape.ElementDefinition[] = [
     ...items.map(({ id, name }) => ({
       data: { id, label: name },
-      classes: [id === item.id && 'main-item', isCategoryId(id) && 'category-item'].filter(Boolean).join(' '),
+      classes: [id === itemId && 'main-item', isCategoryId(id) && 'category-item'].filter(Boolean).join(' '),
     })),
     ...edges.map(({ source, target }) => ({
       data: {
         source,
         target,
       },
-      classes: source === item.id ? 'main-edge' : undefined,
+      classes: source === itemId ? 'main-edge' : undefined,
     })),
   ]
 

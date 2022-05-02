@@ -7,7 +7,7 @@ export const App: React.FC<any> = () => {
     <div>
       <h1 style={{ textAlign: 'center' }}> {`すこぶる可愛い！`} </h1>
       {synthesizableItems.map((item) => (
-        <ItemSynthesisGraph key={item.id} item={item} />
+        <ItemSynthesisGraph key={item.id} itemId={item.id} />
       ))}
     </div>
   )
