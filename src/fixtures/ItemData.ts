@@ -31,3 +31,11 @@ export const categoryIdToName = (categoryId: string): string => categoryId.repla
 
 export const isSynthesizableItem = (itemId: string): boolean => data.items[itemId].isSynthesizable
 export const isCategoryId = (itemId: string): boolean => itemId.startsWith('(')
+
+// data does not contain category -> () edges
+// sometimes we want to make such edges
+export const makeEdge = ({ source, target }: { source: string; target: string }) => ({
+  id: `edge__${source}__${target}`,
+  source,
+  target,
+})

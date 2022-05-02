@@ -24,6 +24,14 @@ def is_category_ingredient(input):
     return input.startswith("(")
 
 
+def make_edge_id(source, target):
+    return "edge__" + source + "__" + target
+
+
+def make_category_id(category_name):
+    return "(" + category_name + ")"
+
+
 edges = {}
 items = {}
 
@@ -41,6 +49,14 @@ if __name__ == "__main__":
             kind = row[4]
             cat = [c for c in row[5:9] if c != ""]
             items[name] = {"id": name, "name": name, "kind": kind, "categoryList": cat}
+            for c in cat:
+                category_id = make_category_id(c)
+                edge_id = make_edge_id(category_id, name)
+                edges[edge_id] = {
+                    "id": edge_id,
+                    "source": category_id,
+                    "target": name,
+                }
 
     with open(item_effect_file_name, newline="") as csvfile:
         spamreader = csv.reader(csvfile)
@@ -56,7 +72,7 @@ if __name__ == "__main__":
                     "name": ingredient,
                     "isCategory": True,
                 }
-            edge_id = "edge__" + item + "__" + ingredient
+            edge_id = make_edge_id(item, ingredient)
             edges[edge_id] = {
                 "id": edge_id,
                 "source": item,

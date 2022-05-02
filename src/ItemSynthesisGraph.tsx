@@ -3,6 +3,7 @@ import {
   data,
   isCategoryId,
   isSynthesizableItem,
+  makeEdge,
   Sophie2EdgeType,
   Sophie2ItemType,
   synthesizableItems,
@@ -15,17 +16,16 @@ import React from 'react'
 Cytoscape.use(coseBilkent)
 
 const layout = {
-  name: 'cose-bilkent',
+  // FIXME: readable layout......
+  name: 'breadthfirst',
   animate: false,
   fit: true,
   nodeDimensionsIncludeLabels: true,
-  randomize: true,
-  edgeElasticity: 0.1, // 0.45,
-  gravityRange: 5, // 3.8
+  circle: true,
 }
 const style: React.CSSProperties = {
   width: '100%',
-  height: '500px',
+  height: '1000px',
 }
 const stylesheet: Cytoscape.Stylesheet[] = [
   {
@@ -103,15 +103,13 @@ const collectItemAndEdges: (prop: {
       items.push(data.items[itemId])
       ++itemCheckIndex
       // find edges start with itemId
-      for (const edge of Object.values(data.edges)) {
-        if (edge.source === itemId) {
-          edges.push(edge)
-          if (edge.hasCategory && !categoryCheckList.includes(edge.target)) {
-            categoryCheckList.push(edge.target)
-          }
-          if (!edge.hasCategory && !itemCheckList.includes(edge.target)) {
-            itemCheckList.push(edge.target)
-          }
+      for (const edge of Object.values(data.edges).filter((e) => e.source === itemId)) {
+        edges.push(edge)
+        if (edge.hasCategory && !categoryCheckList.includes(edge.target)) {
+          categoryCheckList.push(edge.target)
+        }
+        if (!edge.hasCategory && !itemCheckList.includes(edge.target)) {
+          itemCheckList.push(edge.target)
         }
       }
     }
@@ -122,19 +120,13 @@ const collectItemAndEdges: (prop: {
       ++categoryCheckIndex
 
       if (expandCategory) {
-        const category = categoryIdToName(categoryId)
-        for (const item of synthesizableItems) {
-          if (
-            item.categoryList.includes(category) &&
-            !itemCheckList.includes(item.id) &&
-            !expandedItemCheckList.includes(item.id)
-          ) {
-            expandedItemCheckList.push(item.id)
-            edges.push({
-              id: `edge__${categoryId}__${item.id}`,
-              source: categoryId,
-              target: item.id,
-            })
+        // const category = categoryIdToName(categoryId)
+        for (const edge of Object.values(data.edges).filter(
+          (e) => e.source === categoryId && isSynthesizableItem(e.target),
+        )) {
+          edges.push(edge)
+          if (!itemCheckList.includes(edge.target) && !expandedItemCheckList.includes(edge.target)) {
+            expandedItemCheckList.push(edge.target)
           }
         }
       }
@@ -145,11 +137,20 @@ const collectItemAndEdges: (prop: {
       items.push(data.items[itemId])
       ++expandedItemCheckListIndex
       // similar to item checklist, but ignore unsynthesizable ingredients, to reduce graph complexity
-      for (const edge of Object.values(data.edges)) {
-        if (edge.source === itemId && isSynthesizableItem(edge.target) && !edges.some((e) => e.id === edge.id)) {
-          edges.push(edge)
+      for (const edge of Object.values(data.edges).filter((e) => e.source === itemId)) {
+        if (isSynthesizableItem(edge.target)) {
+          if (!edges.some((e) => e.id === edge.id)) {
+            edges.push(edge)
+          }
           if (!itemCheckList.includes(edge.target) && !expandedItemCheckList.includes(edge.target)) {
             expandedItemCheckList.push(edge.target)
+          }
+        } else if (isCategoryId(edge.target)) {
+          if (!edges.some((e) => e.id === edge.id)) {
+            edges.push(edge)
+          }
+          if (!categoryCheckList.includes(edge.target)) {
+            categoryCheckList.push(edge.target)
           }
         }
       }
