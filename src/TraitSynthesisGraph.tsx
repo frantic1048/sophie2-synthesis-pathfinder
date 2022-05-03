@@ -4,7 +4,17 @@ import CytoscapeComponent from 'react-cytoscapejs'
 import { data, traitGradeToColor, Sophie2TraitType, traits } from './fixtures/ItemData'
 import { useNavigate } from 'react-router-dom'
 import { traitPosition } from './fixtures/TraitPositionData'
-import { baseGraphEdgeColor } from './colors'
+import { baseGraphEdgeColor, titleLightBgColor, titleLightFgColor } from './colors'
+import { style } from 'typestyle'
+import { em } from 'csx'
+
+const infoClassName = style({
+  position: 'absolute',
+  padding: `${em(0.2)} ${em(1)}`,
+  zIndex: 1,
+  backgroundColor: titleLightBgColor.fadeOut(0.3).toString(),
+  color: titleLightFgColor.toString(),
+})
 
 const layout = {
   name: 'preset',
@@ -13,7 +23,7 @@ const layout = {
 }
 const cystyle: React.CSSProperties = {
   width: '100%',
-  height: 'max(800px, calc(100% - 5em))',
+  height: 'max(800px, 100%)',
 }
 const stylesheet: Cytoscape.Stylesheet[] = [
   {
@@ -126,7 +136,7 @@ export const TraitSynthesisGraph: React.FC<{ traitId: Sophie2TraitType['id'] }> 
 
   return (
     <>
-      <p>{traitId}</p>
+      <p className={infoClassName}>{traitId}</p>
       <CytoscapeComponent
         cy={handleCyRef}
         elements={elements}
