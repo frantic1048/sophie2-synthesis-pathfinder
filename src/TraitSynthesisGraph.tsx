@@ -4,6 +4,7 @@ import CytoscapeComponent from 'react-cytoscapejs'
 import { data, traitGradeToColor, Sophie2TraitType, traits } from './fixtures/ItemData'
 import { useNavigate } from 'react-router-dom'
 import { traitPosition } from './fixtures/TraitPositionData'
+import { baseGraphEdgeColor } from './colors'
 
 const layout = {
   name: 'preset',
@@ -31,9 +32,9 @@ const stylesheet: Cytoscape.Stylesheet[] = [
     selector: 'edge',
     style: {
       width: 3,
-      'line-color': '#ccc',
+      'line-color': baseGraphEdgeColor.toHexString(),
       'line-opacity': 0.6,
-      'source-arrow-color': '#ccc',
+      'source-arrow-color': baseGraphEdgeColor.toHexString(),
       'source-arrow-shape': 'triangle',
       // MEMO: default 'haystack' curve style does not support arrow!!!
       'curve-style': 'bezier',

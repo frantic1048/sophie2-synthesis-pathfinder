@@ -5,11 +5,15 @@ import { Link, Navigate, Route, Routes } from 'react-router-dom'
 import { ItemSynthesisView } from './ItemSynthesisView'
 import { TraitView } from './TraitView'
 import { TraitLink } from './TraitLink'
+import { baseBgColor, baseBgShadowColor, baseFgColor } from './colors'
 
 cssRule('html', {
   padding: 0,
   margin: 0,
   fontFamily: `"Noto Serif SC",serif`,
+  color: baseFgColor.toString(),
+  backgroundColor: baseBgColor.toString(),
+  boxShadow: `inset 0 0 400px 10px ${baseBgShadowColor}`,
 })
 cssRule('body', {
   margin: 'auto',
