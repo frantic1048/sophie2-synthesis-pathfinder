@@ -18,6 +18,8 @@ import {
 } from './colors'
 import { List, ListItem } from './List'
 import { Helmet } from 'react-helmet'
+import { Button } from './Button'
+import { NavLink } from './NavLink'
 
 cssRule('html', {
   padding: 0,
@@ -60,6 +62,9 @@ const headerClassName = style({
 const navLinksClassName = style({
   display: 'flex',
   justifyContent: 'space-around',
+  $nest: {
+    '&>a': { textDecoration: 'none' },
+  },
 })
 const navClassName = style({
   width: '18em',
@@ -67,7 +72,7 @@ const navClassName = style({
 })
 const itemListClassName = style({
   listStyle: 'none',
-  height: 'calc(100% - 6em)',
+  height: 'calc(100% - 7.5em)',
   overflowY: 'auto',
 })
 const contentClassName = style({
@@ -89,10 +94,10 @@ export const App: React.FC<any> = () => {
       <nav className={navClassName}>
         <header className={headerClassName}> {`すこぶる可愛い！`} </header>
         <div className={navLinksClassName}>
-          <Link to="/item">item</Link>
-          <Link to="/trait">trait</Link>
+          <NavLink to="/item">Item</NavLink>
+          <NavLink to="/trait">Trait</NavLink>
           <a href="https://github.com/frantic1048/sophie2-synthesis-pathfinder" target={'_blank'} rel="noreferrer">
-            github
+            <Button>GitHub</Button>
           </a>
         </div>
         <Routes>
