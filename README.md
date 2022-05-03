@@ -6,4 +6,4 @@
 
 ## Develop
 
-`yarn dev:webpack`
+`yarn dev`
