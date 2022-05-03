@@ -18,9 +18,13 @@ const stylesheet: Cytoscape.Stylesheet[] = [
   {
     selector: 'node',
     style: {
-      'background-color': '#666',
       label: 'data(id)',
       shape: 'ellipse',
+      'background-opacity': 0.7,
+      'text-background-color': '#fff',
+      'text-background-opacity': 0.2,
+      'text-background-padding': '3px',
+      'text-background-shape': 'roundrectangle',
     },
   },
   {
@@ -28,8 +32,9 @@ const stylesheet: Cytoscape.Stylesheet[] = [
     style: {
       width: 3,
       'line-color': '#ccc',
-      'target-arrow-color': '#ccc',
-      'target-arrow-shape': 'triangle',
+      'line-opacity': 0.6,
+      'source-arrow-color': '#ccc',
+      'source-arrow-shape': 'triangle',
       // MEMO: default 'haystack' curve style does not support arrow!!!
       'curve-style': 'bezier',
     },
@@ -37,27 +42,43 @@ const stylesheet: Cytoscape.Stylesheet[] = [
   {
     selector: 'node.active',
     style: {
-      'background-color': '#ff6ea2',
       shape: 'star',
       width: 60,
       height: 60,
-      'border-width': 10,
-      'border-color': '#ABE3FF',
+      'border-width': 5,
+      'border-color': '#ff6ea2',
       'border-style': 'double',
+      color: '#fff',
+      'background-opacity': 1,
+      'font-weight': 'bold',
+      'text-outline-color': '#ff6ea2',
+      'text-outline-width': 1,
+      'text-background-color': '#ff6ea2',
+      'text-background-opacity': 0.6,
+      'z-index': 2,
     },
   },
   {
     selector: 'node.related',
     style: {
       shape: 'diamond',
+      'border-width': 4,
+      'border-color': '#ff6ea2',
+      'border-style': 'double',
+      color: '#fff',
+      'background-opacity': 1,
+      'text-background-color': '#ff6ea2',
+      'text-background-opacity': 0.6,
+      'z-index': 1,
     },
   },
   {
     selector: 'edge.related',
     style: {
-      width: 6,
-      'line-color': '#ABE3FF',
-      'target-arrow-color': '#ABE3FF',
+      width: 2,
+      'line-opacity': 0.8,
+      'line-color': '#ff6ea2',
+      'source-arrow-color': '#ff6ea2',
     },
   },
 ]
