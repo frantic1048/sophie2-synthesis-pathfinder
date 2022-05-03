@@ -116,11 +116,13 @@ if __name__ == "__main__":
         spamreader = csv.reader(csvfile)
         for row in [r for r in spamreader if r[0] != ""][1:]:
             name = row[0]
+            grade = row[2]
             kind_list = row[3:13]  # TODO: process kind_list
             combo_list = [c for c in row[13:15] if c != ""]
             traits[name] = {
                 "id": name,
                 "name": name,
+                "grade": grade
             }
             for c in combo_list:
                 edge_id = make_edge_id(name, c)

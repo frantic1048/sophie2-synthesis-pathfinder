@@ -18,6 +18,7 @@ export type Sophie2EdgeType = {
 export type Sophie2TraitType = {
   id: string
   name: string
+  grade: number
 }
 export type Sophie2TraitEdgeType = {
   id: string
@@ -37,6 +38,18 @@ export const data: Sophie2Data = JSON.parse(raw)
 
 export const synthesizableItems = Object.values(data.items).filter(({ isSynthesizable }) => isSynthesizable)
 export const traits = Object.values(data.traits)
+export const maxTraitGrade = Math.max(...traits.map((t) => t.grade))
+export const minTraitGrade = Math.min(...traits.map((t) => t.grade))
+export const traitGradeToColor: (grade: number) => string = (grade) => {
+  const [maxH, maxS, maxL] = [360, 86, 50] // deg, percent, percent
+  const [minH, minS, minL] = [106, 20, 16]
+  const ratio = (grade - minTraitGrade) / (maxTraitGrade - minTraitGrade)
+  const [h, s, l] = [minH + ratio * (maxH - minH), minS + ratio * (maxS - minS), minL + ratio * (maxL - minL)]
+  const result = `hsl(${h},${s}%,${l}%)`
+
+  return result
+}
+export const getTraitGrade = (traitId: string) => data.traits[traitId]?.grade ?? minTraitGrade
 
 // category id: (uni), in Sophie2ItemType.id
 // category name: uni, in Sophie2ItemType.categoryList

@@ -1,7 +1,7 @@
 import Cytoscape from 'cytoscape'
 import React from 'react'
 import CytoscapeComponent from 'react-cytoscapejs'
-import { data, Sophie2TraitType, traits } from './fixtures/ItemData'
+import { data, traitGradeToColor, Sophie2TraitType, traits } from './fixtures/ItemData'
 import { useNavigate } from 'react-router-dom'
 import { traitPosition } from './fixtures/TraitPositionData'
 
@@ -9,12 +9,6 @@ const layout = {
   name: 'preset',
   fit: false,
   animate: false,
-  // nodeDimensionsIncludeLabels: true,
-  // animate: false,
-  // tile: true,
-  // randomize: true,
-  // edgeElasticity: 0.1, // 0.45,
-  // gravityRange: 5, // 3.8
   transform(node, position) {
     const scaleRatio = 1.6
     return {
@@ -33,7 +27,7 @@ const stylesheet: Cytoscape.Stylesheet[] = [
     style: {
       'background-color': '#666',
       label: 'data(id)',
-      shape: 'round-octagon',
+      shape: 'ellipse',
     },
   },
   {
@@ -52,21 +46,23 @@ const stylesheet: Cytoscape.Stylesheet[] = [
     style: {
       'background-color': '#ff6ea2',
       shape: 'star',
-      width: 50,
-      height: 50,
+      width: 60,
+      height: 60,
+      'border-width': 10,
+      'border-color': '#ABE3FF',
+      'border-style': 'double',
     },
   },
   {
     selector: 'node.related',
     style: {
-      'background-color': '#516186',
-      shape: 'ellipse',
+      shape: 'diamond',
     },
   },
   {
     selector: 'edge.related',
     style: {
-      width: 7,
+      width: 6,
       'line-color': '#ABE3FF',
       'target-arrow-color': '#ABE3FF',
     },
@@ -76,9 +72,10 @@ const stylesheet: Cytoscape.Stylesheet[] = [
 export const TraitSynthesisGraph: React.FC<{ traitId: Sophie2TraitType['id'] }> = ({ traitId }) => {
   const elements = React.useMemo<Cytoscape.ElementDefinition[]>(
     () => [
-      ...traits.map(({ id, name }) => ({
-        data: { id: id, label: name },
+      ...traits.map(({ id, name, grade }) => ({
+        data: { id: id, label: name, grade },
         position: traitPosition.find((tp) => tp.id === id)?.position,
+        style: { 'background-color': traitGradeToColor(grade) },
       })),
       ...Object.values(data.traitEdges).map(({ source, target }) => ({ data: { source, target } })),
     ],
@@ -89,15 +86,16 @@ export const TraitSynthesisGraph: React.FC<{ traitId: Sophie2TraitType['id'] }> 
   const handleCyRef = React.useCallback<(cy: Cytoscape.Core) => void>((_cy) => (cy.current = _cy), [])
   React.useEffect(() => {
     if (cy.current) {
-      cy.current.elements('.active, .related').removeClass('active related')
-
       const selectedNode = cy.current.nodes(`#${traitId}`)
-      selectedNode.addClass('active')
-
       const relatedEdges = selectedNode.successors()
-      relatedEdges.addClass('related')
 
-      cy.current.animate({ center: { eles: selectedNode } })
+      cy.current.startBatch()
+      cy.current.elements('.active, .related').removeClass('active related')
+      selectedNode.addClass('active')
+      relatedEdges.addClass('related')
+      cy.current.endBatch()
+
+      cy.current.animate({ center: { eles: selectedNode }, duration: 300 })
     }
   }, [traitId])
 
@@ -124,6 +122,7 @@ export const TraitSynthesisGraph: React.FC<{ traitId: Sophie2TraitType['id'] }> 
         autoungrabify={true}
         maxZoom={1.5}
         minZoom={0.2}
+        wheelSensitivity={0.5}
       />
     </>
   )

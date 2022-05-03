@@ -1,9 +1,10 @@
-import { synthesizableItems, data, traits } from './fixtures/ItemData'
+import { synthesizableItems, data, traits, traitGradeToColor } from './fixtures/ItemData'
 import React from 'react'
 import { cssRule, style } from 'typestyle'
 import { Link, Navigate, Route, Routes } from 'react-router-dom'
 import { ItemSynthesisView } from './ItemSynthesisView'
 import { TraitView } from './TraitView'
+import { TraitLink } from './TraitLink'
 
 cssRule('html', {
   padding: 0,
@@ -73,7 +74,7 @@ export const App: React.FC<any> = () => {
                 <>
                   {traits.map(({ id }) => (
                     <li key={id}>
-                      <Link to={`/trait/${id}`}>{id}</Link>
+                      <TraitLink traitId={id} />
                     </li>
                   ))}
                 </>
