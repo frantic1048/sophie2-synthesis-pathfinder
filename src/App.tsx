@@ -32,6 +32,7 @@ cssRule('html', {
 })
 cssRule('body', {
   margin: 'auto',
+  scrollbarColor: `${scrollbarFgColor.toString()} ${scrollbarBgColor.toString()}`,
 })
 cssRule('::-webkit-scrollbar', {
   width: '10px',
