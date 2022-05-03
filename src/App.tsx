@@ -20,6 +20,7 @@ import { List, ListItem } from './List'
 import { Helmet } from 'react-helmet'
 import { Button } from './Button'
 import { NavLink } from './NavLink'
+import { ItemLink } from './ItemLink'
 
 cssRule('html', {
   padding: 0,
@@ -104,13 +105,11 @@ export const App: React.FC<any> = () => {
           <Route
             path="/item/*"
             element={
-              <ul className={itemListClassName}>
+              <List className={itemListClassName}>
                 {synthesizableItemIdList.map((id) => (
-                  <li key={id}>
-                    <Link to={`/item/${id}`}>{id}</Link>
-                  </li>
+                  <ItemLink key={id} itemId={id} />
                 ))}
-              </ul>
+              </List>
             }
           />
           <Route
