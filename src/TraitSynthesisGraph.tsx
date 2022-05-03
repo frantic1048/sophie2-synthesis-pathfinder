@@ -9,13 +9,6 @@ const layout = {
   name: 'preset',
   fit: false,
   animate: false,
-  transform(node, position) {
-    const scaleRatio = 1.6
-    return {
-      x: position.x * scaleRatio,
-      y: position.y * scaleRatio,
-    }
-  },
 }
 const cystyle: React.CSSProperties = {
   width: '100%',
