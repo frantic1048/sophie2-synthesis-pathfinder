@@ -15,10 +15,24 @@ export type Sophie2EdgeType = {
   hasCategory?: boolean // is target category
 }
 
+enum Sophie2TraitKindEnum {
+  'FIELD' = 'FIELD', // Exp
+  'MIX' = 'MIX', // Synth
+  'ATTACK' = 'ATTACK', // Bomb
+  'HEAL' = 'HEAL', // Heal
+  'DEBUFFER' = 'DEBUFFER', // Debuff
+  'BUFFER' = 'BUFFER', // Buff
+  'WEAPON' = 'WEAPON', // Wep
+  'ARMOR' = 'ARMOR', // Arm
+  'ACCESSORY' = 'ACCESSORY', // Acc
+  'AMULET' = 'AMULET', // Tali
+}
+
 export type Sophie2TraitType = {
   id: string
   name: string
   grade: number
+  kindList: Sophie2TraitKindEnum[]
 }
 export type Sophie2TraitEdgeType = {
   id: string

@@ -1,7 +1,7 @@
 import Cytoscape from 'cytoscape'
 import React from 'react'
 import CytoscapeComponent from 'react-cytoscapejs'
-import { data, traitGradeToColor, Sophie2TraitType, traits } from './fixtures/ItemData'
+import { data, traitGradeToColor, Sophie2TraitType, traits, getTraitGrade } from './fixtures/ItemData'
 import { useNavigate } from 'react-router-dom'
 import { traitPosition } from './fixtures/TraitPositionData'
 import { baseGraphEdgeColor, titleLightBgColor, titleLightFgColor } from './colors'
@@ -137,7 +137,11 @@ export const TraitSynthesisGraph: React.FC<{ traitId: Sophie2TraitType['id'] }> 
 
   return (
     <>
-      <p className={infoClassName}>{traitId}</p>
+      <p className={infoClassName}>
+        {traitId}
+        <br />
+        {getTraitGrade(traitId)} | {data.traits[traitId].kindList.join(',')}
+      </p>
       <CytoscapeComponent
         cy={handleCyRef}
         elements={elements}

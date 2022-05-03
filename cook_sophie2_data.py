@@ -32,34 +32,26 @@ def make_category_id(category_name):
     return "(" + category_name + ")"
 
 
-# TODO: find correct match
-# trait_kind_list = [
-#     Exp
-#     Synth MIX
-#     Bomb ATTACK
-#     Heal HEAL
-#     Debuff DEBUFFER
-#     Buff BUFFER
-#     Wep WEAPON
-#     Arm ARMOR
-#     Acc ACCESSORY
-#     Tali AMULET
-#     ###
-#     MATERIAL
-#     ATTACK
-#     HEAL
-#     BUFFER
-#     DEBUFFER
-#     FIELD
-#     FIELD_TOOL
-#     MIX
-#     WEAPON
-#     ARMOR
-#     ACCESSORY
-#     AMULET
-#     IMPORTANT
-#     BOOK
-# ]
+# match Item Data
+trait_kind_list = [
+    "FIELD",  # Exp
+    "MIX",  # Synth
+    "ATTACK",  # Bomb
+    "HEAL",  # Heal
+    "DEBUFFER",  # Debuff
+    "BUFFER",  # Buff
+    "WEAPON",  # Wep
+    "ARMOR",  # Arm
+    "ACCESSORY",  # Acc
+    "AMULET",  # Tali
+]
+
+
+# kind_list in trait data:
+# [-1, "", "", -1, -1, "", "", "", "", -1]
+def convert_trait_kind_list(kind_flag_list):
+    return [kind for (kind, f) in zip(trait_kind_list, kind_flag_list) if f == "-1"]
+
 
 items = {}
 edges = {}
@@ -117,12 +109,14 @@ if __name__ == "__main__":
         for row in [r for r in spamreader if r[0] != ""][1:]:
             name = row[0]
             grade = row[2]
-            kind_list = row[3:13]  # TODO: process kind_list
+            kind_flag_list = row[3:13]  # TODO: process kind_list
+            kind_list = convert_trait_kind_list(kind_flag_list)
             combo_list = [c for c in row[13:15] if c != ""]
             traits[name] = {
                 "id": name,
                 "name": name,
-                "grade": grade
+                "grade": grade,
+                "kindList": kind_list,
             }
             for c in combo_list:
                 edge_id = make_edge_id(name, c)
