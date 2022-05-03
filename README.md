@@ -6,6 +6,4 @@
 
 ## Develop
 
-Open two terminal and run:
-
-- `yarn dev:webpack`
+`yarn dev:webpack`
