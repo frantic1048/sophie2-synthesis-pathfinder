@@ -113,6 +113,7 @@ export const TraitSynthesisGraph: React.FC<{ traitId: Sophie2TraitType['id'] }> 
     if (cy.current) {
       const selectedNode = cy.current.nodes(`#${traitId}`)
       const relatedEdges = selectedNode.successors()
+      const allRelatedNodes = cy.current.collection().union(selectedNode).union(relatedEdges)
 
       cy.current.startBatch()
       cy.current.elements('.active, .related').removeClass('active related')
@@ -120,7 +121,7 @@ export const TraitSynthesisGraph: React.FC<{ traitId: Sophie2TraitType['id'] }> 
       relatedEdges.addClass('related')
       cy.current.endBatch()
 
-      cy.current.animate({ center: { eles: selectedNode }, duration: 300 })
+      cy.current.animate({ center: { eles: allRelatedNodes }, duration: 300 })
     }
   }, [traitId])
 
