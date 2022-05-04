@@ -33,9 +33,16 @@ const stylesheet: Cytoscape.Stylesheet[] = [
   {
     selector: 'node',
     style: {
-      'background-color': '#9F856C',
+      'background-color': '#AD9782',
       label: 'data(id)',
       shape: 'round-octagon',
+      width: 10,
+      height: 10,
+
+      'background-opacity': 0.8,
+      'border-style': 'dotted',
+      'border-color': '#9F856C',
+      'border-width': 1,
     },
   },
   {
@@ -53,23 +60,46 @@ const stylesheet: Cytoscape.Stylesheet[] = [
   {
     selector: 'node.category-item',
     style: {
-      'background-color': '#308536',
-      shape: 'round-diamond',
+      'background-opacity': 0,
+      shape: 'barrel',
+      'border-style': 'dashed',
+      'border-color': '#9F856C',
+      'border-width': 2,
+      width: 15,
+      height: 15,
     },
   },
   {
     selector: 'node.synthesizable',
     style: {
-      backgroundColor: '#2D4988',
+      backgroundColor: '#9F856C',
+      'border-width': 0,
+      'background-opacity': 0.8,
+      width: 30,
+      height: 30,
     },
   },
   {
     selector: 'node.active',
     style: {
-      'background-color': '#ff6ea2',
+      'background-color': '#FDEB56',
+      'background-opacity': 0.9,
+      'border-width': 0,
       shape: 'star',
       width: 50,
       height: 50,
+    },
+  },
+  {
+    selector: '.loop',
+    style: { display: 'element' },
+  },
+  {
+    selector: 'edge.loop',
+    style: {
+      'line-color': '#9DBD69',
+      'source-arrow-color': '#9DBD69',
+      'line-opacity': 0.7,
     },
   },
 ]
@@ -181,8 +211,8 @@ export const ItemSynthesisGraph: React.FC<{ itemId: Sophie2ItemType['id'] }> = (
   const elements = React.useMemo<Cytoscape.ElementDefinition[]>(() => {
     const [items, edges] = collectItemAndEdges({ itemId, expandCategory: true })
     return [
-      ...items.map(({ id, name, isExpanded, isSynthesizable }) => ({
-        data: { id, label: name, isExpanded, isSynthesizable },
+      ...items.map(({ id, name, isExpanded, isSynthesizable, isCategory }) => ({
+        data: { id, label: name, isExpanded, isSynthesizable, isCategory },
       })),
       ...edges.map(({ source, target, isExpanded }) => ({ data: { source, target, isExpanded } })),
     ]
@@ -190,13 +220,14 @@ export const ItemSynthesisGraph: React.FC<{ itemId: Sophie2ItemType['id'] }> = (
 
   React.useEffect(() => {
     if (cy.current) {
-      const selectedNode = cy.current.nodes(`#${itemId}`)
-      const categoryNodes = cy.current.nodes(`[id ^= "("]`)
+      const selectedNode = cy.current.$(`node#${itemId}`)
+      const categoryNodes = cy.current.$(`node[id ^= "("]`)
       const expandedEles = cy.current.$('[?isExpanded]')
-      const synthesizableNodes = cy.current.nodes('[?isSynthesizable]')
+      const synthesizableNodes = cy.current.$('node[?isSynthesizable]')
 
       const oldHiddenEles = cy.current.$('.hidden')
       const oldActiveEls = cy.current.$('.active')
+      const oldLoopEls = cy.current.$('.loop')
 
       const handleClickSynthesizableNode = (e) => {
         const node = e.target
@@ -211,12 +242,39 @@ export const ItemSynthesisGraph: React.FC<{ itemId: Sophie2ItemType['id'] }> = (
       // reset status
       oldHiddenEles.removeClass('hidden')
       oldActiveEls.removeClass('active')
+      oldLoopEls.removeClass('loop')
 
       selectedNode.addClass('active')
       categoryNodes.addClass('category-item')
-
       expandedEles.addClass('hidden')
       synthesizableNodes.addClass('synthesizable')
+
+      const edgeToSelectedNode = cy.current.edges(`[target = "${itemId}"]`)
+      const djk = cy.current.elements().dijkstra({ root: selectedNode, directed: true })
+      edgeToSelectedNode.forEach((ele) => {
+        const target = ele.source()
+        const path = djk.pathTo(target)
+        const distance = djk.distanceTo(target)
+        if (Number.isFinite(distance)) {
+          ele.addClass('loop')
+          ele.source().addClass('loop')
+          path.addClass('loop')
+        }
+      })
+
+      const edgeFromSelectedNode = cy.current
+        .edges(`[source = "${itemId}"]`)
+        .filter((ele) => ele.target().data('isSynthesizable') || ele.target().data('isCategory'))
+      edgeFromSelectedNode.forEach((ele) => {
+        const root = ele.target()
+        const djk = cy.current?.elements().dijkstra({ root, directed: true })
+        const path = djk?.pathTo(selectedNode)
+        const distance = djk?.distanceTo(selectedNode)
+        if (Number.isFinite(distance)) {
+          ele.addClass('loop')
+          path?.addClass('loop')
+        }
+      })
 
       cy.current.endBatch()
 
