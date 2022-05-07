@@ -16,8 +16,8 @@ import {
   scrollbarFgShadow2Color,
   scrollbarFgShadowColor,
 } from './colors'
-import { List, ListItem } from './List'
-import { Helmet } from 'react-helmet'
+import { List } from './List'
+import { Helmet } from 'react-helmet-async'
 import { Button } from './Button'
 import { NavLink } from './NavLink'
 import { ItemLink } from './ItemLink'

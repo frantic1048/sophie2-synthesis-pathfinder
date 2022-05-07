@@ -2,8 +2,8 @@
 
 ## Build
 
-`yarn build`
+`pnpm build`
 
 ## Develop
 
-`yarn dev`
+`pnpm dev`
