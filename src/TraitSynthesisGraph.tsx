@@ -157,5 +157,3 @@ export const TraitSynthesisGraph: React.FC<{ traitId: Sophie2TraitType['id'] }> 
     </>
   )
 }
-
-// temp1.current.nodes().map(n => ({id: n.id(),position: n.renderedPosition()}))
