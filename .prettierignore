@@ -16,5 +16,7 @@ yarn-error.log*
 /node_modules
 /package-lock.json
 
+/pnpm-lock.yaml
+
 # data file
 *.csv

@@ -21,6 +21,7 @@ import { Helmet } from 'react-helmet-async'
 import { Button } from './Button'
 import { NavLink } from './NavLink'
 import { ItemLink } from './ItemLink'
+import { TraitViewV2 } from './TraitViewV2'
 
 cssRule('html', {
   padding: 0,
@@ -123,14 +124,26 @@ export const App: React.FC<any> = () => {
               </List>
             }
           />
+          <Route
+            path="/traitv2/*"
+            element={
+              <List className={itemListClassName}>
+                {traits.map(({ id }) => (
+                  <TraitLink key={id} traitId={id} />
+                ))}
+              </List>
+            }
+          />
         </Routes>
       </nav>
       <div className={contentClassName}>
         <Routes>
           <Route path="/item/:itemId" element={<ItemSynthesisView />} />
           <Route path="/trait/:traitId" element={<TraitView />} />
+          <Route path="/traitv2/:traitId" element={<TraitViewV2 />} />
           <Route path="/item" element={<Navigate to={`/item/${synthesizableItemIdList[0]}`} replace />} />
           <Route path="/trait" element={<Navigate to={`/trait/${traits[0].id}`} replace />} />
+          <Route path="/traitv2" element={<Navigate to={`/traitv2/${traits[0].id}`} replace />} />
           <Route path="*" element={<Navigate to={`/item/${synthesizableItemIdList[0]}`} replace />} />
         </Routes>
       </div>
