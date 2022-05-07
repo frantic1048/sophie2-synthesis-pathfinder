@@ -12,7 +12,7 @@ jobs:
       - uses: actions/setup-node@v3.1.1
 
       - name: Init deps
-        run: yarn --frozen-lockfile
+        run: pnpm --frozen-lockfile
 
       - name: Build
-        run: yarn build
+        run: pnpm build
