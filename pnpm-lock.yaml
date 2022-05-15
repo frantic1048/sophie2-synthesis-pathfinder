@@ -18,7 +18,7 @@ specifiers:
   react-dom: 18.1.0
   react-helmet-async: 1.3.0
   react-router-dom: 6.3.0
-  swc-loader: 0.2.0
+  swc-loader: 0.2.1
   typescript: 4.6.4
   typestyle: 2.3.0
   webpack: 5.72.1
@@ -48,7 +48,7 @@ devDependencies:
   html-webpack-plugin: 5.5.0_webpack@5.72.1
   inject-body-webpack-plugin: 1.3.0_html-webpack-plugin@5.5.0
   prettier: 2.6.2
-  swc-loader: 0.2.0_4z6dd5nd5yp4gyk4wduo7jdhey
+  swc-loader: 0.2.1_4z6dd5nd5yp4gyk4wduo7jdhey
   webpack: 5.72.1_3gpkaeooc4uorsgmbiy2ogzw3q
   webpack-cli: 4.9.2_cwh63z5eu3fmemh7flfnfpcp74
   webpack-dev-server: 4.9.0_smhu6mcfcg7aivfsuosc335k3u
@@ -3061,8 +3061,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /swc-loader/0.2.0_4z6dd5nd5yp4gyk4wduo7jdhey:
-    resolution: {integrity: sha512-HefatIgiOaAekVcUPwT5hRNrWF3nULGv5nqGuXeHR7wz1HNN/VGlgmJE830yhIA7X3dHPln4yUTPnZ3ws7B5Fg==}
+  /swc-loader/0.2.1_4z6dd5nd5yp4gyk4wduo7jdhey:
+    resolution: {integrity: sha512-opJG9R5Dl+Fa0QihOZO9v6vueB+JzRhJZw+c4ZRCqUHG2RZL10eHZRHMdQoDz6bvLp7XWe7XBIMUkuWtoGfMJw==}
     peerDependencies:
       '@swc/core': ^1.2.147
       webpack: '>=2'
