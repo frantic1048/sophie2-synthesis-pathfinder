@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@swc/core': 1.2.196
   '@types/cytoscape': 3.19.4
-  '@types/react': 18.0.10
+  '@types/react': 18.0.11
   '@types/react-cytoscapejs': 1.2.2
   '@types/react-dom': 18.0.5
   csx: 10.0.2
@@ -41,7 +41,7 @@ dependencies:
 devDependencies:
   '@swc/core': 1.2.196
   '@types/cytoscape': 3.19.4
-  '@types/react': 18.0.10
+  '@types/react': 18.0.11
   '@types/react-cytoscapejs': 1.2.2
   '@types/react-dom': 18.0.5
   cz-conventional-changelog: 3.3.0_@swc+core@1.2.196
@@ -446,17 +446,17 @@ packages:
     resolution: {integrity: sha512-Z+CeQLw4XyQOrS/SdbcUCdYfWqYmaPS/WT+gNy33KYR09BtVzekx1jeNU5kNDvXCv8/8jGlhSrSk0uO7ocGuFg==}
     dependencies:
       '@types/cytoscape': 3.19.4
-      '@types/react': 18.0.10
+      '@types/react': 18.0.11
     dev: true
 
   /@types/react-dom/18.0.5:
     resolution: {integrity: sha512-OWPWTUrY/NIrjsAPkAk1wW9LZeIjSvkXRhclsFO8CZcZGCOg2G0YZy4ft+rOyYxy8B7ui5iZzi9OkDebZ7/QSA==}
     dependencies:
-      '@types/react': 18.0.10
+      '@types/react': 18.0.11
     dev: true
 
-  /@types/react/18.0.10:
-    resolution: {integrity: sha512-dIugadZuIPrRzvIEevIu7A1smqOAjkSMv8qOfwPt9Ve6i6JT/FQcCHyk2qIAxwsQNKZt5/oGR0T4z9h2dXRAkg==}
+  /@types/react/18.0.11:
+    resolution: {integrity: sha512-JxSwm54IgMW4XTR+zFF5QpNx4JITmFbB4WHR2J0vg9RpjNeyqEMlODXsD2e64br6GX70TL0UYjZJETpyyC1WdA==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
