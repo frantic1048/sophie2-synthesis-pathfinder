@@ -23,7 +23,7 @@ specifiers:
   typestyle: 2.3.0
   webpack: 5.73.0
   webpack-cli: 4.10.0
-  webpack-dev-server: 4.9.2
+  webpack-dev-server: 4.9.3
   webpack-merge: 5.8.0
 
 dependencies:
@@ -50,8 +50,8 @@ devDependencies:
   prettier: 2.7.1
   swc-loader: 0.2.3_btdmghegsb54fxuxbf25op32tq
   webpack: 5.73.0_nltn7yr3ar43eioxvwdiyw3t7i
-  webpack-cli: 4.10.0_hnfkmnck6ti4dm6ulhhz44v2ju
-  webpack-dev-server: 4.9.2_77l47gmqkrqiei5z7sbwz5iaj4
+  webpack-cli: 4.10.0_6rc575xxn4hngez2jk2zkyfdoi
+  webpack-dev-server: 4.9.3_77l47gmqkrqiei5z7sbwz5iaj4
   webpack-merge: 5.8.0
 
 packages:
@@ -635,7 +635,7 @@ packages:
       webpack-cli: 4.x.x
     dependencies:
       webpack: 5.73.0_nltn7yr3ar43eioxvwdiyw3t7i
-      webpack-cli: 4.10.0_hnfkmnck6ti4dm6ulhhz44v2ju
+      webpack-cli: 4.10.0_6rc575xxn4hngez2jk2zkyfdoi
     dev: true
 
   /@webpack-cli/info/1.5.0_webpack-cli@4.10.0:
@@ -644,10 +644,10 @@ packages:
       webpack-cli: 4.x.x
     dependencies:
       envinfo: 7.8.1
-      webpack-cli: 4.10.0_hnfkmnck6ti4dm6ulhhz44v2ju
+      webpack-cli: 4.10.0_6rc575xxn4hngez2jk2zkyfdoi
     dev: true
 
-  /@webpack-cli/serve/1.7.0_b6kp5g2s4uywsci7bb7pbu5to4:
+  /@webpack-cli/serve/1.7.0_jrmoy2z4ppm6sherzyq2k2csya:
     resolution: {integrity: sha512-oxnCNGj88fL+xzV+dacXs44HcDwf1ovs3AuEzvP7mqXw7fQntqIhQ1BRmynh4qEKQSSSRSWVyXRjmTbZIX9V2Q==}
     peerDependencies:
       webpack-cli: 4.x.x
@@ -656,8 +656,8 @@ packages:
       webpack-dev-server:
         optional: true
     dependencies:
-      webpack-cli: 4.10.0_hnfkmnck6ti4dm6ulhhz44v2ju
-      webpack-dev-server: 4.9.2_77l47gmqkrqiei5z7sbwz5iaj4
+      webpack-cli: 4.10.0_6rc575xxn4hngez2jk2zkyfdoi
+      webpack-dev-server: 4.9.3_77l47gmqkrqiei5z7sbwz5iaj4
     dev: true
 
   /@xtuc/ieee754/1.2.0:
@@ -1076,8 +1076,8 @@ packages:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
     dev: true
 
-  /connect-history-api-fallback/1.6.0:
-    resolution: {integrity: sha512-e54B99q/OUoH64zYYRf3HBP5z24G38h5D3qXu23JGRoigpX5Ss4r9ZnDk3g0Z8uQC2x2lPaJ+UlWBc1ZWBWdLg==}
+  /connect-history-api-fallback/2.0.0:
+    resolution: {integrity: sha512-U73+6lQFmfiNPrYbXqr6kZ1i1wiRqXnp2nhMsINseWXO8lDau0LGEffJ8kQi4EjLZympVgRdvqjAgiZ1tgzDDA==}
     engines: {node: '>=0.8'}
     dev: true
 
@@ -3296,7 +3296,7 @@ packages:
       minimalistic-assert: 1.0.1
     dev: true
 
-  /webpack-cli/4.10.0_hnfkmnck6ti4dm6ulhhz44v2ju:
+  /webpack-cli/4.10.0_6rc575xxn4hngez2jk2zkyfdoi:
     resolution: {integrity: sha512-NLhDfH/h4O6UOy+0LSso42xvYypClINuMNBVVzX4vX98TmTaTUxwRbXdhucbFMd2qLaCTcLq/PdYrvi8onw90w==}
     engines: {node: '>=10.13.0'}
     hasBin: true
@@ -3319,7 +3319,7 @@ packages:
       '@discoveryjs/json-ext': 0.5.7
       '@webpack-cli/configtest': 1.2.0_77l47gmqkrqiei5z7sbwz5iaj4
       '@webpack-cli/info': 1.5.0_webpack-cli@4.10.0
-      '@webpack-cli/serve': 1.7.0_b6kp5g2s4uywsci7bb7pbu5to4
+      '@webpack-cli/serve': 1.7.0_jrmoy2z4ppm6sherzyq2k2csya
       colorette: 2.0.19
       commander: 7.2.0
       cross-spawn: 7.0.3
@@ -3328,7 +3328,7 @@ packages:
       interpret: 2.2.0
       rechoir: 0.7.1
       webpack: 5.73.0_nltn7yr3ar43eioxvwdiyw3t7i
-      webpack-dev-server: 4.9.2_77l47gmqkrqiei5z7sbwz5iaj4
+      webpack-dev-server: 4.9.3_77l47gmqkrqiei5z7sbwz5iaj4
       webpack-merge: 5.8.0
     dev: true
 
@@ -3346,8 +3346,8 @@ packages:
       webpack: 5.73.0_nltn7yr3ar43eioxvwdiyw3t7i
     dev: true
 
-  /webpack-dev-server/4.9.2_77l47gmqkrqiei5z7sbwz5iaj4:
-    resolution: {integrity: sha512-H95Ns95dP24ZsEzO6G9iT+PNw4Q7ltll1GfJHV4fKphuHWgKFzGHWi4alTlTnpk1SPPk41X+l2RB7rLfIhnB9Q==}
+  /webpack-dev-server/4.9.3_77l47gmqkrqiei5z7sbwz5iaj4:
+    resolution: {integrity: sha512-3qp/eoboZG5/6QgiZ3llN8TUzkSpYg1Ko9khWX1h40MIEUNS2mDoIa8aXsPfskER+GbTvs/IJZ1QTBBhhuetSw==}
     engines: {node: '>= 12.13.0'}
     hasBin: true
     peerDependencies:
@@ -3369,7 +3369,7 @@ packages:
       chokidar: 3.5.3
       colorette: 2.0.19
       compression: 1.7.4
-      connect-history-api-fallback: 1.6.0
+      connect-history-api-fallback: 2.0.0
       default-gateway: 6.0.3
       express: 4.18.1
       graceful-fs: 4.2.10
@@ -3385,7 +3385,7 @@ packages:
       sockjs: 0.3.24
       spdy: 4.0.2
       webpack: 5.73.0_nltn7yr3ar43eioxvwdiyw3t7i
-      webpack-cli: 4.10.0_hnfkmnck6ti4dm6ulhhz44v2ju
+      webpack-cli: 4.10.0_6rc575xxn4hngez2jk2zkyfdoi
       webpack-dev-middleware: 5.3.3_webpack@5.73.0
       ws: 8.8.0
     transitivePeerDependencies:
@@ -3441,7 +3441,7 @@ packages:
       tapable: 2.2.1
       terser-webpack-plugin: 5.3.3_btdmghegsb54fxuxbf25op32tq
       watchpack: 2.4.0
-      webpack-cli: 4.10.0_hnfkmnck6ti4dm6ulhhz44v2ju
+      webpack-cli: 4.10.0_6rc575xxn4hngez2jk2zkyfdoi
       webpack-sources: 3.2.3
     transitivePeerDependencies:
       - '@swc/core'
