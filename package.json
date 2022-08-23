@@ -24,7 +24,7 @@
     "react-helmet-async": "1.3.0",
     "react-router-dom": "6.3.0",
     "typescript": "4.6.4",
-    "typestyle": "2.3.0"
+    "typestyle": "2.4.0"
   },
   "devDependencies": {
     "@swc/core": "1.2.242",
