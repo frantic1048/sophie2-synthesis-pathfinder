@@ -7,7 +7,7 @@ specifiers:
   '@types/react-cytoscapejs': 1.2.2
   '@types/react-dom': 18.0.6
   csx: 10.0.2
-  cytoscape: 3.21.1
+  cytoscape: 3.22.1
   cytoscape-cose-bilkent: 4.1.0
   cz-conventional-changelog: 3.3.0
   html-webpack-plugin: 5.5.0
@@ -28,8 +28,8 @@ specifiers:
 
 dependencies:
   csx: 10.0.2
-  cytoscape: 3.21.1
-  cytoscape-cose-bilkent: 4.1.0_cytoscape@3.21.1
+  cytoscape: 3.22.1
+  cytoscape-cose-bilkent: 4.1.0_cytoscape@3.22.1
   react: 18.2.0
   react-cytoscapejs: 1.2.1_biqbaboplfbrettd7655fr4n2y
   react-dom: 18.2.0_react@18.2.0
@@ -1240,24 +1240,21 @@ packages:
       csstype: 2.6.20
     dev: false
 
-  /cytoscape-cose-bilkent/4.1.0_cytoscape@3.21.1:
+  /cytoscape-cose-bilkent/4.1.0_cytoscape@3.22.1:
     resolution: {integrity: sha512-wgQlVIUJF13Quxiv5e1gstZ08rnZj2XaLHGoFMYXz7SkNfCDOOteKBE6SYRfA9WxxI/iBc3ajfDoc6hb/MRAHQ==}
     peerDependencies:
       cytoscape: ^3.2.0
     dependencies:
       cose-base: 1.0.3
-      cytoscape: 3.21.1
+      cytoscape: 3.22.1
     dev: false
 
-  /cytoscape/3.21.1:
-    resolution: {integrity: sha512-mxdxCzuGHOMSWHUFO+/ZQPeMNtJAm81LGzdwP02LhT592ZRfHWCvHUY++HpnSjg/SgrKg1CMqegY/HvYLUS1qg==}
+  /cytoscape/3.22.1:
+    resolution: {integrity: sha512-+wMWCXI+c6h7xhh0BQpttOPO7zIB7z6KyDd7D+8AkRhE9E6csXNnV5inBkdo2mxbBoll1jePVxXHqxA2J5cAog==}
     engines: {node: '>=0.10'}
     dependencies:
       heap: 0.2.7
-      lodash.debounce: 4.0.8
-      lodash.get: 4.4.2
-      lodash.set: 4.3.2
-      lodash.topath: 4.5.2
+      lodash: 4.17.21
     dev: false
 
   /cz-conventional-changelog/3.3.0_@swc+core@1.2.242:
@@ -2209,29 +2206,12 @@ packages:
       p-locate: 4.1.0
     dev: true
 
-  /lodash.debounce/4.0.8:
-    resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
-    dev: false
-
-  /lodash.get/4.4.2:
-    resolution: {integrity: sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==}
-    dev: false
-
   /lodash.map/4.6.0:
     resolution: {integrity: sha512-worNHGKLDetmcEYDvh2stPCrrQRkP20E4l0iIS7F8EvzMqBBi7ltvFN5m1HvTf1P7Jk1txKhvFcmYsCr8O2F1Q==}
     dev: true
 
-  /lodash.set/4.3.2:
-    resolution: {integrity: sha512-4hNPN5jlm/N/HLMCO43v8BXKq9Z7QdAGc/VGrRD61w8gN9g/6jF9A4L1pbUgBLCffi0w9VsXfTOij5x8iTyFvg==}
-    dev: false
-
-  /lodash.topath/4.5.2:
-    resolution: {integrity: sha512-1/W4dM+35DwvE/iEd1M9ekewOSTlpFekhw9mhAtrwjVqUr83/ilQiyAvmg4tVX7Unkcfl1KC+i9WdaT4B6aQcg==}
-    dev: false
-
   /lodash/4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
-    dev: true
 
   /log-symbols/4.1.0:
     resolution: {integrity: sha512-8XPvpAA8uyhfteu8pIvQxpJZ7SYYdpUivZpGy6sFsBuKRY/7rQGavedeB8aK+Zkyq6upMFVL/9AW6vOYzfRyLg==}
@@ -2660,7 +2640,7 @@ packages:
       react: '>=15.0.0'
       react-dom: '>=15.0.0'
     dependencies:
-      cytoscape: 3.21.1
+      cytoscape: 3.22.1
       prop-types: 15.8.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
