@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@swc/core': 1.2.248
-  '@types/cytoscape': 3.19.7
+  '@types/cytoscape': 3.19.8
   '@types/react': 18.0.18
   '@types/react-cytoscapejs': 1.2.2
   '@types/react-dom': 18.0.6
@@ -40,7 +40,7 @@ dependencies:
 
 devDependencies:
   '@swc/core': 1.2.248
-  '@types/cytoscape': 3.19.7
+  '@types/cytoscape': 3.19.8
   '@types/react': 18.0.18
   '@types/react-cytoscapejs': 1.2.2
   '@types/react-dom': 18.0.6
@@ -416,8 +416,8 @@ packages:
       '@types/node': 18.7.14
     dev: true
 
-  /@types/cytoscape/3.19.7:
-    resolution: {integrity: sha512-JPM9gkXd302QvChbT7vnMli0QYbithROlQQQ9u0ur9YhmMkN0E/y++mKreHEhBvSf3ffiMH6RwemwPM5qbOGEw==}
+  /@types/cytoscape/3.19.8:
+    resolution: {integrity: sha512-qaXGw5SzvQooDJRGETQ7hfgWJD6VO3YUlzFIRXWd7dQkBnKiZo9pD+UD2fKHjP01fXL8k0Y5PNqdcuW6fUOuFw==}
     dev: true
 
   /@types/eslint-scope/3.7.4:
@@ -502,7 +502,7 @@ packages:
   /@types/react-cytoscapejs/1.2.2:
     resolution: {integrity: sha512-Z+CeQLw4XyQOrS/SdbcUCdYfWqYmaPS/WT+gNy33KYR09BtVzekx1jeNU5kNDvXCv8/8jGlhSrSk0uO7ocGuFg==}
     dependencies:
-      '@types/cytoscape': 3.19.7
+      '@types/cytoscape': 3.19.8
       '@types/react': 18.0.18
     dev: true
 
