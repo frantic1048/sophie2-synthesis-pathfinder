@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@swc/core": "1.2.248",
-    "@types/cytoscape": "3.19.7",
+    "@types/cytoscape": "3.19.8",
     "@types/react": "18.0.18",
     "@types/react-cytoscapejs": "1.2.2",
     "@types/react-dom": "18.0.6",
