@@ -10,7 +10,7 @@
     "build": "webpack build --config webpack.config.prod.js",
     "dev": "webpack serve --open --config webpack.config.dev.js"
   },
-  "packageManager": "pnpm@7.13.2",
+  "packageManager": "pnpm@7.13.4",
   "engines": {
     "node": ">=v16.17.1"
   },
