@@ -102,20 +102,22 @@ packages:
     dev: true
     optional: true
 
-  /@commitlint/load/17.2.0_@swc+core@1.3.20:
-    resolution: {integrity: sha512-HDD57qSqNrk399R4TIjw31AWBG8dBjNj1MrDKZKmC/wvimtnIFlqzcu1+sxfXIOHj/+M6tcMWDtvknGUd7SU+g==}
+  /@commitlint/load/17.3.0_@swc+core@1.3.20:
+    resolution: {integrity: sha512-u/pV6rCAJrCUN+HylBHLzZ4qj1Ew3+eN9GBPhNi9otGxtOfA8b+8nJSxaNbcC23Ins/kcpjGf9zPSVW7628Umw==}
     engines: {node: '>=v14'}
     requiresBuild: true
     dependencies:
       '@commitlint/config-validator': 17.1.0
       '@commitlint/execute-rule': 17.0.0
-      '@commitlint/resolve-extends': 17.1.0
+      '@commitlint/resolve-extends': 17.3.0
       '@commitlint/types': 17.0.0
       '@types/node': 14.18.33
       chalk: 4.1.2
       cosmiconfig: 7.1.0
       cosmiconfig-typescript-loader: 4.2.0_zhrz2lclwdmp54iaqottwiuipu
-      lodash: 4.17.21
+      lodash.isplainobject: 4.0.6
+      lodash.merge: 4.6.2
+      lodash.uniq: 4.5.0
       resolve-from: 5.0.0
       ts-node: 10.9.1_rzkjazejss5o3ajxqijihynpii
       typescript: 4.8.4
@@ -125,14 +127,14 @@ packages:
     dev: true
     optional: true
 
-  /@commitlint/resolve-extends/17.1.0:
-    resolution: {integrity: sha512-jqKm00LJ59T0O8O4bH4oMa4XyJVEOK4GzH8Qye9XKji+Q1FxhZznxMV/bDLyYkzbTodBt9sL0WLql8wMtRTbqQ==}
+  /@commitlint/resolve-extends/17.3.0:
+    resolution: {integrity: sha512-Lf3JufJlc5yVEtJWC8o4IAZaB8FQAUaVlhlAHRACd0TTFizV2Lk2VH70et23KgvbQNf7kQzHs/2B4QZalBv6Cg==}
     engines: {node: '>=v14'}
     dependencies:
       '@commitlint/config-validator': 17.1.0
       '@commitlint/types': 17.0.0
       import-fresh: 3.3.0
-      lodash: 4.17.21
+      lodash.mergewith: 4.6.2
       resolve-from: 5.0.0
       resolve-global: 1.0.0
     dev: true
@@ -754,8 +756,8 @@ packages:
       color-convert: 2.0.1
     dev: true
 
-  /anymatch/3.1.2:
-    resolution: {integrity: sha512-P43ePfOAIupkguHUycrc4qJ9kz8ZiuOUijaETwX7THt0Y/GNK7v0aa8rY816xWjZ7rJdA5XdMcpVFTKMq+RvWg==}
+  /anymatch/3.1.3:
+    resolution: {integrity: sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw==}
     engines: {node: '>= 8'}
     dependencies:
       normalize-path: 3.0.0
@@ -857,7 +859,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001431
+      caniuse-lite: 1.0.30001434
       electron-to-chromium: 1.4.284
       node-releases: 2.0.6
       update-browserslist-db: 1.0.10_browserslist@4.21.4
@@ -909,8 +911,8 @@ packages:
       tslib: 2.4.1
     dev: true
 
-  /caniuse-lite/1.0.30001431:
-    resolution: {integrity: sha512-zBUoFU0ZcxpvSt9IU66dXVT/3ctO1cy4y9cscs1szkPlcWb6pasYM144GqrUygUbT+k7cmUCW61cvskjcv0enQ==}
+  /caniuse-lite/1.0.30001434:
+    resolution: {integrity: sha512-aOBHrLmTQw//WFa2rcF1If9fa3ypkC1wzqqiKHgfdrXTWcU8C4gKVZT77eQAPWN1APys3+uQ0Df07rKauXGEYA==}
     dev: true
 
   /chalk/2.4.2:
@@ -938,7 +940,7 @@ packages:
     resolution: {integrity: sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw==}
     engines: {node: '>= 8.10.0'}
     dependencies:
-      anymatch: 3.1.2
+      anymatch: 3.1.3
       braces: 3.0.2
       glob-parent: 5.1.2
       is-binary-path: 2.1.0
@@ -1224,7 +1226,7 @@ packages:
       longest: 2.0.1
       word-wrap: 1.2.3
     optionalDependencies:
-      '@commitlint/load': 17.2.0_@swc+core@1.3.20
+      '@commitlint/load': 17.3.0_@swc+core@1.3.20
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
@@ -1378,8 +1380,8 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /enhanced-resolve/5.10.0:
-    resolution: {integrity: sha512-T0yTFjdpldGY8PmuXXR0PyQ1ufZpEGiHVrp7zHKB7jdR4qlmZHhONVM5AQOAWXuF/w3dnHbEQVrNptJgt7F+cQ==}
+  /enhanced-resolve/5.12.0:
+    resolution: {integrity: sha512-QHTXI/sZQmko1cbDoNAa3mJ5qhWUUNAq3vR0/YiD379fWQrcfuoX1+HW2S0MTt7XmoPLapdaDKUtelUSPic7hQ==}
     engines: {node: '>=10.13.0'}
     dependencies:
       graceful-fs: 4.2.10
@@ -1795,7 +1797,7 @@ packages:
       he: 1.2.0
       param-case: 3.0.4
       relateurl: 0.2.7
-      terser: 5.15.1
+      terser: 5.16.0
     dev: true
 
   /html-webpack-plugin/5.5.0_webpack@5.75.0:
@@ -2156,9 +2158,29 @@ packages:
       p-locate: 4.1.0
     dev: true
 
+  /lodash.isplainobject/4.0.6:
+    resolution: {integrity: sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA==}
+    dev: true
+    optional: true
+
   /lodash.map/4.6.0:
     resolution: {integrity: sha512-worNHGKLDetmcEYDvh2stPCrrQRkP20E4l0iIS7F8EvzMqBBi7ltvFN5m1HvTf1P7Jk1txKhvFcmYsCr8O2F1Q==}
     dev: true
+
+  /lodash.merge/4.6.2:
+    resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
+    dev: true
+    optional: true
+
+  /lodash.mergewith/4.6.2:
+    resolution: {integrity: sha512-GK3g5RPZWTRSeLSpgP8Xhra+pnjBC56q9FZYe1d5RN3TJ35dbkGy3YqBSMbyCrlbi+CM9Z3Jk5yTL7RCsqboyQ==}
+    dev: true
+    optional: true
+
+  /lodash.uniq/4.5.0:
+    resolution: {integrity: sha512-xfBaXQd9ryd9dlSDvnvI0lvxfLJlYAZzXomUYzLKtUeOQvOP5piqAWuGtrhWeqaXK9hhoM/iyJc5AV+XfsX3HQ==}
+    dev: true
+    optional: true
 
   /lodash/4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
@@ -3100,12 +3122,12 @@ packages:
       jest-worker: 27.5.1
       schema-utils: 3.1.1
       serialize-javascript: 6.0.0
-      terser: 5.15.1
+      terser: 5.16.0
       webpack: 5.75.0_pan5sgtfzbainyvkuqzn2fhl3q
     dev: true
 
-  /terser/5.15.1:
-    resolution: {integrity: sha512-K1faMUvpm/FBxjBXud0LWVAGxmvoPbZbfTCYbSgaaYQaIXI3/TdI7a7ZGA73Zrou6Q8Zmz3oeUTsp/dj+ag2Xw==}
+  /terser/5.16.0:
+    resolution: {integrity: sha512-KjTV81QKStSfwbNiwlBXfcgMcOloyuRdb62/iLFPGBcVNF4EXjhdYBhYHmbJpiBrVxZhDvltE11j+LBQUxEEJg==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
@@ -3410,7 +3432,7 @@ packages:
       acorn-import-assertions: 1.8.0_acorn@8.8.1
       browserslist: 4.21.4
       chrome-trace-event: 1.0.3
-      enhanced-resolve: 5.10.0
+      enhanced-resolve: 5.12.0
       es-module-lexer: 0.9.3
       eslint-scope: 5.1.1
       events: 3.3.0
