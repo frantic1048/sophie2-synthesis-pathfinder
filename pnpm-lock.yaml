@@ -19,7 +19,7 @@ specifiers:
   react-helmet-async: 1.3.0
   react-router-dom: 6.6.2
   swc-loader: 0.2.3
-  typescript: 4.8.4
+  typescript: 4.9.4
   typestyle: 2.4.0
   webpack: 5.75.0
   webpack-cli: 4.10.0
@@ -35,7 +35,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   react-helmet-async: 1.3.0_biqbaboplfbrettd7655fr4n2y
   react-router-dom: 6.6.2_biqbaboplfbrettd7655fr4n2y
-  typescript: 4.8.4
+  typescript: 4.9.4
   typestyle: 2.4.0
 
 devDependencies:
@@ -114,13 +114,13 @@ packages:
       '@types/node': 18.11.18
       chalk: 4.1.2
       cosmiconfig: 8.0.0
-      cosmiconfig-typescript-loader: 4.3.0_6sfouzbgts5tru63mrjox7x6qq
+      cosmiconfig-typescript-loader: 4.3.0_bxtyj3et3xbsdyxhh3oblnfbj4
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
       resolve-from: 5.0.0
-      ts-node: 10.9.1_jqskl2rx5pabmz6r7wyr6bml2y
-      typescript: 4.8.4
+      ts-node: 10.9.1_tuaaix3o4wua7jksxyu5belrtq
+      typescript: 4.9.4
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
@@ -1117,7 +1117,7 @@ packages:
       layout-base: 1.0.2
     dev: false
 
-  /cosmiconfig-typescript-loader/4.3.0_6sfouzbgts5tru63mrjox7x6qq:
+  /cosmiconfig-typescript-loader/4.3.0_bxtyj3et3xbsdyxhh3oblnfbj4:
     resolution: {integrity: sha512-NTxV1MFfZDLPiBMjxbHRwSh5LaLcPMwNdCutmnHJCKoVnlvldPWlllonKwrsRJ5pYZBIBGRWWU2tfvzxgeSW5Q==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
@@ -1128,8 +1128,8 @@ packages:
     dependencies:
       '@types/node': 18.11.18
       cosmiconfig: 8.0.0
-      ts-node: 10.9.1_jqskl2rx5pabmz6r7wyr6bml2y
-      typescript: 4.8.4
+      ts-node: 10.9.1_tuaaix3o4wua7jksxyu5belrtq
+      typescript: 4.9.4
     dev: true
     optional: true
 
@@ -3165,7 +3165,7 @@ packages:
     engines: {node: '>=0.6'}
     dev: true
 
-  /ts-node/10.9.1_jqskl2rx5pabmz6r7wyr6bml2y:
+  /ts-node/10.9.1_tuaaix3o4wua7jksxyu5belrtq:
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
     peerDependencies:
@@ -3192,7 +3192,7 @@ packages:
       create-require: 1.1.1
       diff: 4.0.2
       make-error: 1.3.6
-      typescript: 4.8.4
+      typescript: 4.9.4
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
     dev: true
@@ -3215,8 +3215,8 @@ packages:
       mime-types: 2.1.35
     dev: true
 
-  /typescript/4.8.4:
-    resolution: {integrity: sha512-QCh+85mCy+h0IGff8r5XWzOVSbBO+KfeYrMQh7NJ58QujwcE22u+NUSmUxqF+un70P9GXKxa2HCNiTTMJknyjQ==}
+  /typescript/4.9.4:
+    resolution: {integrity: sha512-Uz+dTXYzxXXbsFpM86Wh3dKCxrQqUcVMxwU54orwlJjOpO3ao8L7j5lH+dWfTwgCwIuM9GQ2kvVotzYJMXTBZg==}
     engines: {node: '>=4.2.0'}
     hasBin: true
 
