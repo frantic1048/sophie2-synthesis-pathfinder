@@ -11,7 +11,7 @@ jobs:
 
       - uses: actions/setup-node@v3.6.0
         with:
-          node-version: 16
+          node-version-file: .node-version
 
       - uses: pnpm/action-setup@v2.2.4
         with:
@@ -35,3 +35,11 @@ jobs:
 
       - name: Build
         run: pnpm build
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: ${{ secrets.CLOUDFLARE_PROJECT_NAME }}
+          directory: public
