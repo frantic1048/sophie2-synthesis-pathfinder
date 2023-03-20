@@ -12,7 +12,7 @@ specifiers:
   cz-conventional-changelog: 3.3.0
   html-webpack-plugin: 5.5.0
   inject-body-webpack-plugin: 1.3.0
-  prettier: 2.8.4
+  prettier: 2.8.5
   react: 18.2.0
   react-cytoscapejs: 2.0.0
   react-dom: 18.2.0
@@ -47,7 +47,7 @@ devDependencies:
   cz-conventional-changelog: 3.3.0_@swc+core@1.3.41
   html-webpack-plugin: 5.5.0_webpack@5.76.2
   inject-body-webpack-plugin: 1.3.0_html-webpack-plugin@5.5.0
-  prettier: 2.8.4
+  prettier: 2.8.5
   swc-loader: 0.2.3_p5gbcuh6o7gimc24anjcfbfmzm
   webpack: 5.76.2_ekwbeb7tvwqtk7vuw5s6r2hbxi
   webpack-cli: 5.0.1_7a32uyj7xarijb6sngjof7zuke
@@ -2553,8 +2553,8 @@ packages:
       find-up: 4.1.0
     dev: true
 
-  /prettier/2.8.4:
-    resolution: {integrity: sha512-vIS4Rlc2FNh0BySk3Wkd6xmwxB0FpOndW5fisM5H8hsZSxU2VWVB5CWIkIjWvrHjIhxk2g3bfMKM87zNTrZddw==}
+  /prettier/2.8.5:
+    resolution: {integrity: sha512-3gzuxrHbKUePRBB4ZeU08VNkUcqEHaUaouNt0m7LGP4Hti/NuB07C7PPTM/LkWqXoJYJn2McEo5+kxPNrtQkLQ==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
