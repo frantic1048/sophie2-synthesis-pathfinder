@@ -5,17 +5,17 @@ dependencies:
     specifier: 10.0.2
     version: 10.0.2
   cytoscape:
-    specifier: 3.24.0
-    version: 3.24.0
+    specifier: 3.24.1
+    version: 3.24.1
   cytoscape-cose-bilkent:
     specifier: 4.1.0
-    version: 4.1.0(cytoscape@3.24.0)
+    version: 4.1.0(cytoscape@3.24.1)
   react:
     specifier: 18.2.0
     version: 18.2.0
   react-cytoscapejs:
     specifier: 2.0.0
-    version: 2.0.0(cytoscape@3.24.0)(react@18.2.0)
+    version: 2.0.0(cytoscape@3.24.1)(react@18.2.0)
   react-dom:
     specifier: 18.2.0
     version: 18.2.0(react@18.2.0)
@@ -1248,17 +1248,17 @@ packages:
       csstype: 2.6.21
     dev: false
 
-  /cytoscape-cose-bilkent@4.1.0(cytoscape@3.24.0):
+  /cytoscape-cose-bilkent@4.1.0(cytoscape@3.24.1):
     resolution: {integrity: sha512-wgQlVIUJF13Quxiv5e1gstZ08rnZj2XaLHGoFMYXz7SkNfCDOOteKBE6SYRfA9WxxI/iBc3ajfDoc6hb/MRAHQ==}
     peerDependencies:
       cytoscape: ^3.2.0
     dependencies:
       cose-base: 1.0.3
-      cytoscape: 3.24.0
+      cytoscape: 3.24.1
     dev: false
 
-  /cytoscape@3.24.0:
-    resolution: {integrity: sha512-W9fJMrAfr/zKFzDCpRR/wn6uoEQ7gfbJmxPK5DadXj69XyAhZYi1QXLOE+UXJfXVXxqGM1o1eeiIrtxrtB43zA==}
+  /cytoscape@3.24.1:
+    resolution: {integrity: sha512-dSOgBir6cxDwWsoLT8smWApY1F/PY2WTiMdrl77fZ8Yppgw413+jjAfvI8RHW94HpMSn0H+JJJgaH1fNMt1sIQ==}
     engines: {node: '>=0.10'}
     dependencies:
       heap: 0.2.7
@@ -2676,13 +2676,13 @@ packages:
       unpipe: 1.0.0
     dev: true
 
-  /react-cytoscapejs@2.0.0(cytoscape@3.24.0)(react@18.2.0):
+  /react-cytoscapejs@2.0.0(cytoscape@3.24.1)(react@18.2.0):
     resolution: {integrity: sha512-t3SSl1DQy7+JQjN+8QHi1anEJlM3i3aAeydHTsJwmjo/isyKK7Rs7oCvU6kZsB9NwZidzZQR21Vm2PcBLG/Tjg==}
     peerDependencies:
       cytoscape: ^3.2.19
       react: '>=15.0.0'
     dependencies:
-      cytoscape: 3.24.0
+      cytoscape: 3.24.1
       prop-types: 15.8.1
       react: 18.2.0
     dev: false
