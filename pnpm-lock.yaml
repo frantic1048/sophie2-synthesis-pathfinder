@@ -44,8 +44,8 @@ devDependencies:
     specifier: 3.19.11
     version: 3.19.11
   '@types/react':
-    specifier: 18.2.25
-    version: 18.2.25
+    specifier: 18.2.27
+    version: 18.2.27
   '@types/react-cytoscapejs':
     specifier: 1.2.3
     version: 1.2.3
@@ -516,17 +516,17 @@ packages:
     resolution: {integrity: sha512-/NsK/rpfw1YP37UFgxhihylR2yl0bzNk1yl5Q43SkNMr6tOs12ac9YKAFAa+Xu739Jya9C7pPjDNQyU0yUS9eA==}
     dependencies:
       '@types/cytoscape': 3.19.11
-      '@types/react': 18.2.25
+      '@types/react': 18.2.27
     dev: true
 
   /@types/react-dom@18.2.11:
     resolution: {integrity: sha512-zq6Dy0EiCuF9pWFW6I6k6W2LdpUixLE4P6XjXU1QHLfak3GPACQfLwEuHzY5pOYa4hzj1d0GxX/P141aFjZsyg==}
     dependencies:
-      '@types/react': 18.2.25
+      '@types/react': 18.2.27
     dev: true
 
-  /@types/react@18.2.25:
-    resolution: {integrity: sha512-24xqse6+VByVLIr+xWaQ9muX1B4bXJKXBbjszbld/UEDslGLY53+ZucF44HCmLbMPejTzGG9XgR+3m2/Wqu1kw==}
+  /@types/react@18.2.27:
+    resolution: {integrity: sha512-Wfv7B7FZiR2r3MIqbAlXoY1+tXm4bOqfz4oRr+nyXdBqapDBZ0l/IGcSlAfvxIHEEJjkPU0MYAc/BlFPOcrgLw==}
     dependencies:
       '@types/prop-types': 15.7.7
       '@types/scheduler': 0.16.3
