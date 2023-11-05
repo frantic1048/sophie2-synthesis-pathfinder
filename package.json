@@ -29,7 +29,7 @@
   "devDependencies": {
     "@swc/core": "1.3.96",
     "@types/cytoscape": "3.19.14",
-    "@types/react": "18.2.34",
+    "@types/react": "18.2.35",
     "@types/react-cytoscapejs": "1.2.4",
     "@types/react-dom": "18.2.14",
     "cz-conventional-changelog": "3.3.0",
