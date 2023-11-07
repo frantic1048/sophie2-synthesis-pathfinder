@@ -41,8 +41,8 @@ devDependencies:
     specifier: 1.3.96
     version: 1.3.96
   '@types/cytoscape':
-    specifier: 3.19.14
-    version: 3.19.14
+    specifier: 3.19.15
+    version: 3.19.15
   '@types/react':
     specifier: 18.2.36
     version: 18.2.36
@@ -379,8 +379,8 @@ packages:
       '@types/node': 20.8.10
     dev: true
 
-  /@types/cytoscape@3.19.14:
-    resolution: {integrity: sha512-IoAXEGjOBAU56BaV5eFGsqACA1iNiBZrFg6II/917l3HsW3bi6z4RBdjiQNBSU9pVrdtbwDu9HWEWSSqqLEyPg==}
+  /@types/cytoscape@3.19.15:
+    resolution: {integrity: sha512-v1PNoMBzoIrOGZfuU/PFwDEPxfP4GnfVCTrZPx4M2G4EFS7BV/FLCCoVMOzdBG98MJbNBXpx1LCrs8wh0vybEw==}
     dev: true
 
   /@types/eslint-scope@3.7.6:
@@ -480,7 +480,7 @@ packages:
   /@types/react-cytoscapejs@1.2.4:
     resolution: {integrity: sha512-bMWmBCRAjPrQgondFLfqworU/DDpAr15aw3jdJUik7QMjHI5B+kTNPi2Q0mCzPQXHbB1+Bg7rJbYjbfPUZsISA==}
     dependencies:
-      '@types/cytoscape': 3.19.14
+      '@types/cytoscape': 3.19.15
       '@types/react': 18.2.36
     dev: true
 
