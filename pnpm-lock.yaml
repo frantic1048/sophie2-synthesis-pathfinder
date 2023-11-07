@@ -47,8 +47,8 @@ devDependencies:
     specifier: 18.2.36
     version: 18.2.36
   '@types/react-cytoscapejs':
-    specifier: 1.2.4
-    version: 1.2.4
+    specifier: 1.2.5
+    version: 1.2.5
   '@types/react-dom':
     specifier: 18.2.14
     version: 18.2.14
@@ -477,8 +477,8 @@ packages:
     resolution: {integrity: sha512-+0autS93xyXizIYiyL02FCY8N+KkKPhILhcUSA276HxzreZ16kl+cmwvV2qAM/PuCCwPXzOXOWhiPcw20uSFcA==}
     dev: true
 
-  /@types/react-cytoscapejs@1.2.4:
-    resolution: {integrity: sha512-bMWmBCRAjPrQgondFLfqworU/DDpAr15aw3jdJUik7QMjHI5B+kTNPi2Q0mCzPQXHbB1+Bg7rJbYjbfPUZsISA==}
+  /@types/react-cytoscapejs@1.2.5:
+    resolution: {integrity: sha512-G9VcGQOlER3njklOu5D0FDGHYfkQJ3yEL95kGbgI/MR08N5dQ7IbLSZI8WqaB4fG0zOURIg0BUtOCrbE5HRZEQ==}
     dependencies:
       '@types/cytoscape': 3.19.15
       '@types/react': 18.2.36
