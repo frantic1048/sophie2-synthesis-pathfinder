@@ -56,11 +56,11 @@ devDependencies:
     specifier: 3.3.0
     version: 3.3.0(typescript@5.3.3)
   html-webpack-plugin:
-    specifier: 5.5.4
-    version: 5.5.4(webpack@5.89.0)
+    specifier: 5.6.0
+    version: 5.6.0(webpack@5.89.0)
   inject-body-webpack-plugin:
     specifier: 1.3.0
-    version: 1.3.0(html-webpack-plugin@5.5.4)
+    version: 1.3.0(html-webpack-plugin@5.6.0)
   prettier:
     specifier: 3.1.1
     version: 3.1.1
@@ -1867,11 +1867,17 @@ packages:
       terser: 5.26.0
     dev: true
 
-  /html-webpack-plugin@5.5.4(webpack@5.89.0):
-    resolution: {integrity: sha512-3wNSaVVxdxcu0jd4FpQFoICdqgxs4zIQQvj+2yQKFfBOnLETQ6X5CDWdeasuGlSsooFlMkEioWDTqBv1wvw5Iw==}
+  /html-webpack-plugin@5.6.0(webpack@5.89.0):
+    resolution: {integrity: sha512-iwaY4wzbe48AfKLZ/Cc8k0L+FKG6oSNRaZ8x5A/T/IVDGyXcbHncM9TdDa93wn0FsSm82FhTKW7f3vS61thXAw==}
     engines: {node: '>=10.13.0'}
     peerDependencies:
+      '@rspack/core': 0.x || 1.x
       webpack: ^5.20.0
+    peerDependenciesMeta:
+      '@rspack/core':
+        optional: true
+      webpack:
+        optional: true
     dependencies:
       '@types/html-minifier-terser': 6.1.0
       html-minifier-terser: 6.1.0
@@ -2003,13 +2009,13 @@ packages:
     resolution: {integrity: sha512-JV/yugV2uzW5iMRSiZAyDtQd+nxtUnjeLt0acNdw98kKLrvuRVyB80tsREOE7yvGVgalhZ6RNXCmEHkUKBKxew==}
     dev: true
 
-  /inject-body-webpack-plugin@1.3.0(html-webpack-plugin@5.5.4):
+  /inject-body-webpack-plugin@1.3.0(html-webpack-plugin@5.6.0):
     resolution: {integrity: sha512-P2H7b52je3jKVcJ8Gw2MjqccGo0QutEjoXoB3XRKbSgsqOv3NgTypqoUm5D8oEz90vx5AIgW9Bk+hJxzEoGvMg==}
     peerDependencies:
       html-webpack-plugin: ^5.3.1
     dependencies:
       debug: 4.3.4
-      html-webpack-plugin: 5.5.4(webpack@5.89.0)
+      html-webpack-plugin: 5.6.0(webpack@5.89.0)
       insert-string-after: 1.0.0
       insert-string-before: 1.0.0
     transitivePeerDependencies:
