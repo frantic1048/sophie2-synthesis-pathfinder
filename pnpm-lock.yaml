@@ -65,8 +65,8 @@ devDependencies:
     specifier: 3.2.5
     version: 3.2.5
   swc-loader:
-    specifier: 0.2.4
-    version: 0.2.4(@swc/core@1.3.107)(webpack@5.90.1)
+    specifier: 0.2.6
+    version: 0.2.6(@swc/core@1.3.107)(webpack@5.90.1)
   webpack:
     specifier: 5.90.1
     version: 5.90.1(@swc/core@1.3.107)(webpack-cli@5.1.4)
@@ -340,6 +340,10 @@ packages:
 
   /@swc/counter@0.1.2:
     resolution: {integrity: sha512-9F4ys4C74eSTEUNndnER3VJ15oru2NumfQxS8geE+f3eB5xvfxpWyqE5XlVnxb/R14uoXi6SLbBwwiDSkv+XEw==}
+    dev: true
+
+  /@swc/counter@0.1.3:
+    resolution: {integrity: sha512-e2BR4lsJkkRlKZ/qCHPw9ZaSxc0MVUd7gtbtaB7aMvHeJVYe8sOB8DBZkP2DtISHGSku9sCK6T6cnY0CtXrOCQ==}
     dev: true
 
   /@swc/types@0.1.5:
@@ -3184,13 +3188,14 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /swc-loader@0.2.4(@swc/core@1.3.107)(webpack@5.90.1):
-    resolution: {integrity: sha512-B0toRR3M8PuUV3f0hSoXHogtLCRW8bVYVZl0L1p1iSeTgVBkXa9mOQOYuQBbSJnSdnoQiM7ZCHIY47b0dKaehg==}
+  /swc-loader@0.2.6(@swc/core@1.3.107)(webpack@5.90.1):
+    resolution: {integrity: sha512-9Zi9UP2YmDpgmQVbyOPJClY0dwf58JDyDMQ7uRc4krmc72twNI2fvlBWHLqVekBpPc7h5NJkGVT1zNDxFrqhvg==}
     peerDependencies:
       '@swc/core': ^1.2.147
       webpack: '>=2'
     dependencies:
       '@swc/core': 1.3.107
+      '@swc/counter': 0.1.3
       webpack: 5.90.1(@swc/core@1.3.107)(webpack-cli@5.1.4)
     dev: true
 
