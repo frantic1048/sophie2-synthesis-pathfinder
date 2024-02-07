@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: nschloe/action-cached-lfs-checkout@v1
 
-      - uses: actions/setup-node@v4.0.1
+      - uses: actions/setup-node@v4.0.2
         with:
           node-version-file: .node-version
 
