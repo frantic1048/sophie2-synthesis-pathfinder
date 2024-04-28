@@ -7,6 +7,7 @@
   "scripts": {
     "fix": "pnpm run fix:prettier",
     "fix:prettier": "prettier --write .",
+    "test": "tsc --noEmit",
     "build": "webpack build --config webpack.config.prod.js",
     "dev": "webpack serve --open --config webpack.config.dev.js"
   },
@@ -18,9 +19,9 @@
     "csx": "10.0.2",
     "cytoscape": "3.28.1",
     "cytoscape-cose-bilkent": "4.1.0",
-    "react": "18.3.1",
+    "react": "19.0.0-beta-94eed63c49-20240425",
     "react-cytoscapejs": "2.0.0",
-    "react-dom": "18.3.1",
+    "react-dom": "19.0.0-beta-94eed63c49-20240425",
     "react-helmet-async": "2.0.4",
     "react-router-dom": "6.22.2",
     "typescript": "5.3.3",
@@ -29,9 +30,9 @@
   "devDependencies": {
     "@swc/core": "1.5.2",
     "@types/cytoscape": "3.21.0",
-    "@types/react": "18.3.1",
+    "@types/react": "npm:types-react@19.0.0-alpha.5",
     "@types/react-cytoscapejs": "1.2.5",
-    "@types/react-dom": "18.3.0",
+    "@types/react-dom": "npm:types-react-dom@19.0.0-alpha.5",
     "cz-conventional-changelog": "3.3.0",
     "html-webpack-plugin": "5.6.0",
     "inject-body-webpack-plugin": "1.3.0",
@@ -41,6 +42,12 @@
     "webpack-cli": "5.1.4",
     "webpack-dev-server": "5.0.4",
     "webpack-merge": "5.10.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/react": "$@types/react",
+      "@types/react-dom": "$@types/react-dom"
+    }
   },
   "config": {
     "commitizen": {

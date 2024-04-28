@@ -107,7 +107,7 @@ export const TraitSynthesisGraph: React.FC<{ traitId: Sophie2TraitType['id'] }> 
     [],
   )
 
-  const cy = React.useRef<Cytoscape.Core>()
+  const cy = React.useRef<Cytoscape.Core>(null)
   const handleCyRef = React.useCallback<(cy: Cytoscape.Core) => void>((_cy) => (cy.current = _cy), [])
   React.useEffect(() => {
     if (cy.current) {

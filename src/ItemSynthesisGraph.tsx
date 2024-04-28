@@ -1,6 +1,6 @@
 import { data, isCategoryId, isSynthesizableItem, Sophie2EdgeType, Sophie2ItemType } from './fixtures/ItemData'
 import CytoscapeComponent from 'react-cytoscapejs'
-import Cytoscape from 'cytoscape'
+import Cytoscape, { EventHandler, Ext } from 'cytoscape'
 import React from 'react'
 import { style } from 'typestyle'
 import { baseGraphEdgeColor } from './colors'
@@ -205,7 +205,7 @@ export const ItemSynthesisGraph: React.FC<{ itemId: Sophie2ItemType['id'] }> = (
 
   const goto = useNavigate()
 
-  const cy = React.useRef<Cytoscape.Core>()
+  const cy = React.useRef<Cytoscape.Core>(null)
   const handleCyRef = React.useCallback<(cy: Cytoscape.Core) => void>((_cy) => (cy.current = _cy), [])
 
   const elements = React.useMemo<Cytoscape.ElementDefinition[]>(() => {
@@ -229,7 +229,7 @@ export const ItemSynthesisGraph: React.FC<{ itemId: Sophie2ItemType['id'] }> = (
       const oldActiveEls = cy.current.$('.active')
       const oldLoopEls = cy.current.$('.loop')
 
-      const handleClickSynthesizableNode = (e) => {
+      const handleClickSynthesizableNode: EventHandler = (e) => {
         const node = e.target
         if (node.id() !== itemId) {
           goto(`/item/${node.id()}`)
