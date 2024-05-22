@@ -19,20 +19,20 @@ dependencies:
     specifier: 4.1.0
     version: 4.1.0(cytoscape@3.28.1)
   react:
-    specifier: 19.0.0-beta-94eed63c49-20240425
-    version: 19.0.0-beta-94eed63c49-20240425
+    specifier: 19.0.0-rc-f994737d14-20240522
+    version: 19.0.0-rc-f994737d14-20240522
   react-cytoscapejs:
     specifier: 2.0.0
-    version: 2.0.0(cytoscape@3.28.1)(react@19.0.0-beta-94eed63c49-20240425)
+    version: 2.0.0(cytoscape@3.28.1)(react@19.0.0-rc-f994737d14-20240522)
   react-dom:
-    specifier: 19.0.0-beta-94eed63c49-20240425
-    version: 19.0.0-beta-94eed63c49-20240425(react@19.0.0-beta-94eed63c49-20240425)
+    specifier: 19.0.0-rc-f994737d14-20240522
+    version: 19.0.0-rc-f994737d14-20240522(react@19.0.0-rc-f994737d14-20240522)
   react-helmet-async:
     specifier: 2.0.4
-    version: 2.0.4(react-dom@19.0.0-beta-94eed63c49-20240425)(react@19.0.0-beta-94eed63c49-20240425)
+    version: 2.0.4(react-dom@19.0.0-rc-f994737d14-20240522)(react@19.0.0-rc-f994737d14-20240522)
   react-router-dom:
     specifier: 6.22.2
-    version: 6.22.2(react-dom@19.0.0-beta-94eed63c49-20240425)(react@19.0.0-beta-94eed63c49-20240425)
+    version: 6.22.2(react-dom@19.0.0-rc-f994737d14-20240522)(react@19.0.0-rc-f994737d14-20240522)
   typescript:
     specifier: 5.3.3
     version: 5.3.3
@@ -2874,7 +2874,7 @@ packages:
       unpipe: 1.0.0
     dev: true
 
-  /react-cytoscapejs@2.0.0(cytoscape@3.28.1)(react@19.0.0-beta-94eed63c49-20240425):
+  /react-cytoscapejs@2.0.0(cytoscape@3.28.1)(react@19.0.0-rc-f994737d14-20240522):
     resolution: {integrity: sha512-t3SSl1DQy7+JQjN+8QHi1anEJlM3i3aAeydHTsJwmjo/isyKK7Rs7oCvU6kZsB9NwZidzZQR21Vm2PcBLG/Tjg==}
     peerDependencies:
       cytoscape: ^3.2.19
@@ -2882,31 +2882,31 @@ packages:
     dependencies:
       cytoscape: 3.28.1
       prop-types: 15.8.1
-      react: 19.0.0-beta-94eed63c49-20240425
+      react: 19.0.0-rc-f994737d14-20240522
     dev: false
 
-  /react-dom@19.0.0-beta-94eed63c49-20240425(react@19.0.0-beta-94eed63c49-20240425):
-    resolution: {integrity: sha512-V0uHW7Xd0u/LDlmFO8sJ9TTNizAESS+pexJNOi3KbOU1taf2gUO5J8YIWis60xcQbh7YBqSklyYIIq3DfiKz3Q==}
+  /react-dom@19.0.0-rc-f994737d14-20240522(react@19.0.0-rc-f994737d14-20240522):
+    resolution: {integrity: sha512-J4CsfTSptPKkhaPbaR6n/KohQiHZTrRZ8GL4H8rbAqN/Qpy69g2MIoLBr5/PUX21ye6JxC1ZRWJFna7Xdg1pdA==}
     peerDependencies:
-      react: 19.0.0-beta-94eed63c49-20240425
+      react: 19.0.0-rc-f994737d14-20240522
     dependencies:
-      react: 19.0.0-beta-94eed63c49-20240425
-      scheduler: 0.25.0-beta-94eed63c49-20240425
+      react: 19.0.0-rc-f994737d14-20240522
+      scheduler: 0.25.0-rc-f994737d14-20240522
     dev: false
 
   /react-fast-compare@3.2.2:
     resolution: {integrity: sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==}
     dev: false
 
-  /react-helmet-async@2.0.4(react-dom@19.0.0-beta-94eed63c49-20240425)(react@19.0.0-beta-94eed63c49-20240425):
+  /react-helmet-async@2.0.4(react-dom@19.0.0-rc-f994737d14-20240522)(react@19.0.0-rc-f994737d14-20240522):
     resolution: {integrity: sha512-yxjQMWposw+akRfvpl5+8xejl4JtUlHnEBcji6u8/e6oc7ozT+P9PNTWMhCbz2y9tc5zPegw2BvKjQA+NwdEjQ==}
     peerDependencies:
       react: ^16.6.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.6.0 || ^17.0.0 || ^18.0.0
     dependencies:
       invariant: 2.2.4
-      react: 19.0.0-beta-94eed63c49-20240425
-      react-dom: 19.0.0-beta-94eed63c49-20240425(react@19.0.0-beta-94eed63c49-20240425)
+      react: 19.0.0-rc-f994737d14-20240522
+      react-dom: 19.0.0-rc-f994737d14-20240522(react@19.0.0-rc-f994737d14-20240522)
       react-fast-compare: 3.2.2
       shallowequal: 1.1.0
     dev: false
@@ -2915,7 +2915,7 @@ packages:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: false
 
-  /react-router-dom@6.22.2(react-dom@19.0.0-beta-94eed63c49-20240425)(react@19.0.0-beta-94eed63c49-20240425):
+  /react-router-dom@6.22.2(react-dom@19.0.0-rc-f994737d14-20240522)(react@19.0.0-rc-f994737d14-20240522):
     resolution: {integrity: sha512-WgqxD2qySEIBPZ3w0sHH+PUAiamDeszls9tzqMPBDA1YYVucTBXLU7+gtRfcSnhe92A3glPnvSxK2dhNoAVOIQ==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -2923,23 +2923,23 @@ packages:
       react-dom: '>=16.8'
     dependencies:
       '@remix-run/router': 1.15.2
-      react: 19.0.0-beta-94eed63c49-20240425
-      react-dom: 19.0.0-beta-94eed63c49-20240425(react@19.0.0-beta-94eed63c49-20240425)
-      react-router: 6.22.2(react@19.0.0-beta-94eed63c49-20240425)
+      react: 19.0.0-rc-f994737d14-20240522
+      react-dom: 19.0.0-rc-f994737d14-20240522(react@19.0.0-rc-f994737d14-20240522)
+      react-router: 6.22.2(react@19.0.0-rc-f994737d14-20240522)
     dev: false
 
-  /react-router@6.22.2(react@19.0.0-beta-94eed63c49-20240425):
+  /react-router@6.22.2(react@19.0.0-rc-f994737d14-20240522):
     resolution: {integrity: sha512-YD3Dzprzpcq+tBMHBS822tCjnWD3iIZbTeSXMY9LPSG541EfoBGyZ3bS25KEnaZjLcmQpw2AVLkFyfgXY8uvcw==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       react: '>=16.8'
     dependencies:
       '@remix-run/router': 1.15.2
-      react: 19.0.0-beta-94eed63c49-20240425
+      react: 19.0.0-rc-f994737d14-20240522
     dev: false
 
-  /react@19.0.0-beta-94eed63c49-20240425:
-    resolution: {integrity: sha512-BPPKh5bZwcpw/Dgfh3A0MoU1GSl2edR2JggCq3QPdghQsrFg1aBuMkul5YB4rpII400RYq9VC5eF5Nm3spx0gA==}
+  /react@19.0.0-rc-f994737d14-20240522:
+    resolution: {integrity: sha512-SeU2v5Xy6FotVhKz0pMS2gvYP7HlkF0qgTskj3JzA1vlxcb3dQjxlm9t0ZlJqcgoyI3VFAw7bomuDMdgy1nBuw==}
     engines: {node: '>=0.10.0'}
     dev: false
 
@@ -3087,8 +3087,8 @@ packages:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
     dev: true
 
-  /scheduler@0.25.0-beta-94eed63c49-20240425:
-    resolution: {integrity: sha512-U8hoOV7uut5E8cMvRSMikEBBqLXfv2BpdxUsG45euaOfnqEgFrCdLLh6ydM+YBJ36+28olXMNmK2PFFzeg4UdQ==}
+  /scheduler@0.25.0-rc-f994737d14-20240522:
+    resolution: {integrity: sha512-qS+xGFF7AljP2APO2iJe8zESNsK20k25MACz+WGOXPybUsRdi1ssvaoF93im2nSX2q/XT3wKkjdz6RQfbmaxdw==}
     dev: false
 
   /schema-utils@3.3.0:
