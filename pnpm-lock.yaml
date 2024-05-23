@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@types/react': npm:types-react@19.0.0-beta.2
+  '@types/react': npm:types-react@19.0.0-rc.0
   '@types/react-dom': npm:types-react-dom@19.0.0
 
 dependencies:
@@ -48,8 +48,8 @@ devDependencies:
     specifier: 3.21.1
     version: 3.21.1
   '@types/react':
-    specifier: npm:types-react@19.0.0-beta.2
-    version: /types-react@19.0.0-beta.2
+    specifier: npm:types-react@19.0.0-rc.0
+    version: /types-react@19.0.0-rc.0
   '@types/react-cytoscapejs':
     specifier: 1.2.5
     version: 1.2.5
@@ -523,7 +523,7 @@ packages:
     resolution: {integrity: sha512-G9VcGQOlER3njklOu5D0FDGHYfkQJ3yEL95kGbgI/MR08N5dQ7IbLSZI8WqaB4fG0zOURIg0BUtOCrbE5HRZEQ==}
     dependencies:
       '@types/cytoscape': 3.21.1
-      '@types/react': /types-react@19.0.0-beta.2
+      '@types/react': /types-react@19.0.0-rc.0
     dev: true
 
   /@types/retry@0.12.2:
@@ -3512,11 +3512,11 @@ packages:
   /types-react-dom@19.0.0:
     resolution: {integrity: sha512-qtWBYduBCmrgf4wqnTrGttEJJSZ6cTGmzuvmWd/34TJNKz/Pp69Islc1+txHF3nRxSuRvmhxztFXvLyxhp8G2w==}
     dependencies:
-      '@types/react': /types-react@19.0.0-beta.2
+      '@types/react': /types-react@19.0.0-rc.0
     dev: true
 
-  /types-react@19.0.0-beta.2:
-    resolution: {integrity: sha512-bcE50h2P/Ajmf3jMPIqL01PDqxo8lwqRIy3idjyadaLKF9vcXbma2CsJkKj0KHBAFllQZkXLTJ8ZpwmUnTv5EQ==}
+  /types-react@19.0.0-rc.0:
+    resolution: {integrity: sha512-JFd3qtgXZ+EdHht8WXMPSF231brd6Bu4yLKqyo0JjpzhmjYxJptT6TBh/xFqOhx+ee2Nagj7Ttkh5F/jc49TVQ==}
     dependencies:
       csstype: 3.1.3
     dev: true
