@@ -28,7 +28,7 @@
     "typestyle": "2.4.0"
   },
   "devDependencies": {
-    "@swc/core": "1.5.27",
+    "@swc/core": "1.5.28",
     "@types/cytoscape": "3.21.3",
     "@types/react": "npm:types-react@19.0.0-rc.0",
     "@types/react-cytoscapejs": "1.2.5",
