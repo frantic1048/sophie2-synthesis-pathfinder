@@ -47,8 +47,8 @@ importers:
         specifier: 1.5.27
         version: 1.5.27
       '@types/cytoscape':
-        specifier: 3.21.2
-        version: 3.21.2
+        specifier: 3.21.3
+        version: 3.21.3
       '@types/react':
         specifier: npm:types-react@19.0.0-rc.0
         version: types-react@19.0.0-rc.0
@@ -268,8 +268,8 @@ packages:
   '@types/conventional-commits-parser@5.0.0':
     resolution: {integrity: sha512-loB369iXNmAZglwWATL+WRe+CRMmmBPtpolYzIebFaX4YA3x+BEfLqhUAV9WanycKI3TG1IMr5bMJDajDKLlUQ==}
 
-  '@types/cytoscape@3.21.2':
-    resolution: {integrity: sha512-eadSCH9hbRV9Ej93S8wact/Oe0DuQV4qlWfST/I6k4lBu6RgqI6mVFzvppcIGzWpzZRu7iyFjFhS2qW0w7KFRA==}
+  '@types/cytoscape@3.21.3':
+    resolution: {integrity: sha512-z8hhiKk8XAOh5uLPocxP06sp7ytI24F/tBSb6O72cDtUM85XLP2cQHCJtRO7vQWGWmUlAc3jnTIzWmviDngK6g==}
 
   '@types/eslint-scope@3.7.7':
     resolution: {integrity: sha512-MzMFlSLBqNF2gcHWO0G1vP/YQyfvrxZ0bF+u7mzUdZ1/xK4A4sru+nraZz5i3iEIk1l1uyicaDVTB4QbbEkAYg==}
@@ -2343,7 +2343,7 @@ snapshots:
       '@types/node': 20.14.2
     optional: true
 
-  '@types/cytoscape@3.21.2': {}
+  '@types/cytoscape@3.21.3': {}
 
   '@types/eslint-scope@3.7.7':
     dependencies:
@@ -2397,7 +2397,7 @@ snapshots:
 
   '@types/react-cytoscapejs@1.2.5':
     dependencies:
-      '@types/cytoscape': 3.21.2
+      '@types/cytoscape': 3.21.3
       '@types/react': types-react@19.0.0-rc.0
 
   '@types/retry@0.12.2': {}
