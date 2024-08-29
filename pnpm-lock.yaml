@@ -47,8 +47,8 @@ importers:
         specifier: 1.6.13
         version: 1.6.13
       '@types/cytoscape':
-        specifier: 3.21.4
-        version: 3.21.4
+        specifier: 3.21.7
+        version: 3.21.7
       '@types/react':
         specifier: npm:types-react@19.0.0-rc.1
         version: types-react@19.0.0-rc.1
@@ -268,8 +268,8 @@ packages:
   '@types/conventional-commits-parser@5.0.0':
     resolution: {integrity: sha512-loB369iXNmAZglwWATL+WRe+CRMmmBPtpolYzIebFaX4YA3x+BEfLqhUAV9WanycKI3TG1IMr5bMJDajDKLlUQ==}
 
-  '@types/cytoscape@3.21.4':
-    resolution: {integrity: sha512-g4M57Zho+AMNYuEptTWH+aZ5VpyF8VcaI2t0+1/PWRZp5XQM6hku1Vo5/Ui721i+L+WCGkI1EjGAeHcYUQ2PRg==}
+  '@types/cytoscape@3.21.7':
+    resolution: {integrity: sha512-dP4UByJtfu5GjMJuv58yCIRxjCp4cP0Wp+Qd46L3Gom0hcV4OPmSOLqt83vArNcYRZLFCAyAk+lcC8oqQtcsqw==}
 
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
@@ -2336,7 +2336,7 @@ snapshots:
       '@types/node': 20.14.9
     optional: true
 
-  '@types/cytoscape@3.21.4': {}
+  '@types/cytoscape@3.21.7': {}
 
   '@types/estree@1.0.5': {}
 
@@ -2380,7 +2380,7 @@ snapshots:
 
   '@types/react-cytoscapejs@1.2.5':
     dependencies:
-      '@types/cytoscape': 3.21.4
+      '@types/cytoscape': 3.21.7
       '@types/react': types-react@19.0.0-rc.1
 
   '@types/retry@0.12.2': {}
