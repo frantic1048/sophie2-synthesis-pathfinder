@@ -16,17 +16,17 @@ importers:
         specifier: 10.0.2
         version: 10.0.2
       cytoscape:
-        specifier: 3.28.1
-        version: 3.28.1
+        specifier: 3.32.0
+        version: 3.32.0
       cytoscape-cose-bilkent:
         specifier: 4.1.0
-        version: 4.1.0(cytoscape@3.28.1)
+        version: 4.1.0(cytoscape@3.32.0)
       react:
         specifier: 19.0.0-rc-f994737d14-20240522
         version: 19.0.0-rc-f994737d14-20240522
       react-cytoscapejs:
         specifier: 2.0.0
-        version: 2.0.0(cytoscape@3.28.1)(react@19.0.0-rc-f994737d14-20240522)
+        version: 2.0.0(cytoscape@3.32.0)(react@19.0.0-rc-f994737d14-20240522)
       react-dom:
         specifier: 19.0.0-rc-f994737d14-20240522
         version: 19.0.0-rc-f994737d14-20240522(react@19.0.0-rc-f994737d14-20240522)
@@ -706,8 +706,8 @@ packages:
     peerDependencies:
       cytoscape: ^3.2.0
 
-  cytoscape@3.28.1:
-    resolution: {integrity: sha512-xyItz4O/4zp9/239wCcH8ZcFuuZooEeF8KHRmzjDfGdXsj3OG9MFSMA0pJE0uX3uCN/ygof6hHf4L7lst+JaDg==}
+  cytoscape@3.32.0:
+    resolution: {integrity: sha512-5JHBC9n75kz5851jeklCPmZWcg3hUe6sjqJvyk3+hVqFaKcHwHgxsjeN1yLmggoUc6STbtm9/NQyabQehfjvWQ==}
     engines: {node: '>=0.10'}
 
   cz-conventional-changelog@3.3.0:
@@ -1040,9 +1040,6 @@ packages:
   he@1.2.0:
     resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
     hasBin: true
-
-  heap@0.2.7:
-    resolution: {integrity: sha512-2bsegYkkHO+h/9MGbn6KWcE45cHZgPANo5LXF7EvWdT0yT2EguSVO1nDgU5c8+ZOPwp2vMNa7YFsJhVcDR9Sdg==}
 
   homedir-polyfill@1.0.3:
     resolution: {integrity: sha512-eSmmWE5bZTK2Nou4g0AI3zZ9rswp7GRKoKXS1BLUkvPviOqs4YTN1djQIqrXy9k5gEtdLPy86JjRwsNM9tnDcA==}
@@ -2719,15 +2716,12 @@ snapshots:
     dependencies:
       csstype: 2.6.21
 
-  cytoscape-cose-bilkent@4.1.0(cytoscape@3.28.1):
+  cytoscape-cose-bilkent@4.1.0(cytoscape@3.32.0):
     dependencies:
       cose-base: 1.0.3
-      cytoscape: 3.28.1
+      cytoscape: 3.32.0
 
-  cytoscape@3.28.1:
-    dependencies:
-      heap: 0.2.7
-      lodash: 4.17.21
+  cytoscape@3.32.0: {}
 
   cz-conventional-changelog@3.3.0(@types/node@22.5.4)(typescript@5.3.3):
     dependencies:
@@ -3063,8 +3057,6 @@ snapshots:
       function-bind: 1.1.2
 
   he@1.2.0: {}
-
-  heap@0.2.7: {}
 
   homedir-polyfill@1.0.3:
     dependencies:
@@ -3563,9 +3555,9 @@ snapshots:
       iconv-lite: 0.4.24
       unpipe: 1.0.0
 
-  react-cytoscapejs@2.0.0(cytoscape@3.28.1)(react@19.0.0-rc-f994737d14-20240522):
+  react-cytoscapejs@2.0.0(cytoscape@3.32.0)(react@19.0.0-rc-f994737d14-20240522):
     dependencies:
-      cytoscape: 3.28.1
+      cytoscape: 3.32.0
       prop-types: 15.8.1
       react: 19.0.0-rc-f994737d14-20240522
 
