@@ -23,7 +23,7 @@
     "react-cytoscapejs": "2.0.0",
     "react-dom": "19.0.0-rc-f994737d14-20240522",
     "react-helmet-async": "2.0.4",
-    "react-router-dom": "6.22.2",
+    "react-router-dom": "6.30.1",
     "typescript": "5.3.3",
     "typestyle": "2.4.0"
   },
