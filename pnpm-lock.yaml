@@ -22,20 +22,20 @@ importers:
         specifier: 4.1.0
         version: 4.1.0(cytoscape@3.28.1)
       react:
-        specifier: 19.0.0-rc-f994737d14-20240522
-        version: 19.0.0-rc-f994737d14-20240522
+        specifier: 19.0.7
+        version: 19.0.7
       react-cytoscapejs:
         specifier: 2.0.0
-        version: 2.0.0(cytoscape@3.28.1)(react@19.0.0-rc-f994737d14-20240522)
+        version: 2.0.0(cytoscape@3.28.1)(react@19.0.7)
       react-dom:
-        specifier: 19.0.0-rc-f994737d14-20240522
-        version: 19.0.0-rc-f994737d14-20240522(react@19.0.0-rc-f994737d14-20240522)
+        specifier: 19.0.7
+        version: 19.0.7(react@19.0.7)
       react-helmet-async:
         specifier: 2.0.4
-        version: 2.0.4(react-dom@19.0.0-rc-f994737d14-20240522(react@19.0.0-rc-f994737d14-20240522))(react@19.0.0-rc-f994737d14-20240522)
+        version: 2.0.4(react-dom@19.0.7(react@19.0.7))(react@19.0.7)
       react-router-dom:
         specifier: 6.22.2
-        version: 6.22.2(react-dom@19.0.0-rc-f994737d14-20240522(react@19.0.0-rc-f994737d14-20240522))(react@19.0.0-rc-f994737d14-20240522)
+        version: 6.22.2(react-dom@19.0.7(react@19.0.7))(react@19.0.7)
       typescript:
         specifier: 5.3.3
         version: 5.3.3
@@ -1568,10 +1568,10 @@ packages:
       cytoscape: ^3.2.19
       react: '>=15.0.0'
 
-  react-dom@19.0.0-rc-f994737d14-20240522:
-    resolution: {integrity: sha512-J4CsfTSptPKkhaPbaR6n/KohQiHZTrRZ8GL4H8rbAqN/Qpy69g2MIoLBr5/PUX21ye6JxC1ZRWJFna7Xdg1pdA==}
+  react-dom@19.0.7:
+    resolution: {integrity: sha512-4nDBdQzr+9LsRcti6VGL1lDWWClEk0KaqoAaSO9B1DyIRCai/pnPc2ShZRHEKuAwVKKQpw6Lhi1expDi6Q0NCg==}
     peerDependencies:
-      react: 19.0.0-rc-f994737d14-20240522
+      react: ^19.0.7
 
   react-fast-compare@3.2.2:
     resolution: {integrity: sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==}
@@ -1598,8 +1598,8 @@ packages:
     peerDependencies:
       react: '>=16.8'
 
-  react@19.0.0-rc-f994737d14-20240522:
-    resolution: {integrity: sha512-SeU2v5Xy6FotVhKz0pMS2gvYP7HlkF0qgTskj3JzA1vlxcb3dQjxlm9t0ZlJqcgoyI3VFAw7bomuDMdgy1nBuw==}
+  react@19.0.7:
+    resolution: {integrity: sha512-RmJKQ4jeqxrOUF3mjX4G9RIhfkYSQmUDpiM1G/wud3Ctm/xMtGBZoL8BYBFhZ0Q0JgNrtc99CXlnu4EZ6RbvRQ==}
     engines: {node: '>=0.10.0'}
 
   readable-stream@2.3.8:
@@ -1679,8 +1679,8 @@ packages:
   safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
 
-  scheduler@0.25.0-rc-f994737d14-20240522:
-    resolution: {integrity: sha512-qS+xGFF7AljP2APO2iJe8zESNsK20k25MACz+WGOXPybUsRdi1ssvaoF93im2nSX2q/XT3wKkjdz6RQfbmaxdw==}
+  scheduler@0.25.0:
+    resolution: {integrity: sha512-xFVuu11jh+xcO7JOAGJNOXld8/TcEHK/4CituBUeUb5hqxJLj9YuemAEuvm9gQ/+pgXYfbQuqAkiYu+u7YEsNA==}
 
   schema-utils@4.2.0:
     resolution: {integrity: sha512-L0jRsrPpjdckP3oPug3/VxNKt2trR8TcabrM6FOAAlvC/9Phcmm+cuAgTlxBqdBR1WJx7Naj9WHw+aOmheSVbw==}
@@ -1929,6 +1929,7 @@ packages:
 
   uuid@8.3.2:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
+    deprecated: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
     hasBin: true
 
   vary@1.1.2:
@@ -3565,42 +3566,42 @@ snapshots:
       iconv-lite: 0.4.24
       unpipe: 1.0.0
 
-  react-cytoscapejs@2.0.0(cytoscape@3.28.1)(react@19.0.0-rc-f994737d14-20240522):
+  react-cytoscapejs@2.0.0(cytoscape@3.28.1)(react@19.0.7):
     dependencies:
       cytoscape: 3.28.1
       prop-types: 15.8.1
-      react: 19.0.0-rc-f994737d14-20240522
+      react: 19.0.7
 
-  react-dom@19.0.0-rc-f994737d14-20240522(react@19.0.0-rc-f994737d14-20240522):
+  react-dom@19.0.7(react@19.0.7):
     dependencies:
-      react: 19.0.0-rc-f994737d14-20240522
-      scheduler: 0.25.0-rc-f994737d14-20240522
+      react: 19.0.7
+      scheduler: 0.25.0
 
   react-fast-compare@3.2.2: {}
 
-  react-helmet-async@2.0.4(react-dom@19.0.0-rc-f994737d14-20240522(react@19.0.0-rc-f994737d14-20240522))(react@19.0.0-rc-f994737d14-20240522):
+  react-helmet-async@2.0.4(react-dom@19.0.7(react@19.0.7))(react@19.0.7):
     dependencies:
       invariant: 2.2.4
-      react: 19.0.0-rc-f994737d14-20240522
-      react-dom: 19.0.0-rc-f994737d14-20240522(react@19.0.0-rc-f994737d14-20240522)
+      react: 19.0.7
+      react-dom: 19.0.7(react@19.0.7)
       react-fast-compare: 3.2.2
       shallowequal: 1.1.0
 
   react-is@16.13.1: {}
 
-  react-router-dom@6.22.2(react-dom@19.0.0-rc-f994737d14-20240522(react@19.0.0-rc-f994737d14-20240522))(react@19.0.0-rc-f994737d14-20240522):
+  react-router-dom@6.22.2(react-dom@19.0.7(react@19.0.7))(react@19.0.7):
     dependencies:
       '@remix-run/router': 1.15.2
-      react: 19.0.0-rc-f994737d14-20240522
-      react-dom: 19.0.0-rc-f994737d14-20240522(react@19.0.0-rc-f994737d14-20240522)
-      react-router: 6.22.2(react@19.0.0-rc-f994737d14-20240522)
+      react: 19.0.7
+      react-dom: 19.0.7(react@19.0.7)
+      react-router: 6.22.2(react@19.0.7)
 
-  react-router@6.22.2(react@19.0.0-rc-f994737d14-20240522):
+  react-router@6.22.2(react@19.0.7):
     dependencies:
       '@remix-run/router': 1.15.2
-      react: 19.0.0-rc-f994737d14-20240522
+      react: 19.0.7
 
-  react@19.0.0-rc-f994737d14-20240522: {}
+  react@19.0.7: {}
 
   readable-stream@2.3.8:
     dependencies:
@@ -3681,7 +3682,7 @@ snapshots:
 
   safer-buffer@2.1.2: {}
 
-  scheduler@0.25.0-rc-f994737d14-20240522: {}
+  scheduler@0.25.0: {}
 
   schema-utils@4.2.0:
     dependencies:
