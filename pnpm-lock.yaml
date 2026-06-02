@@ -16,17 +16,17 @@ importers:
         specifier: 10.0.2
         version: 10.0.2
       cytoscape:
-        specifier: 3.28.1
-        version: 3.28.1
+        specifier: 3.34.0
+        version: 3.34.0
       cytoscape-cose-bilkent:
         specifier: 4.1.0
-        version: 4.1.0(cytoscape@3.28.1)
+        version: 4.1.0(cytoscape@3.34.0)
       react:
         specifier: 19.0.0-rc-f994737d14-20240522
         version: 19.0.0-rc-f994737d14-20240522
       react-cytoscapejs:
         specifier: 2.0.0
-        version: 2.0.0(cytoscape@3.28.1)(react@19.0.0-rc-f994737d14-20240522)
+        version: 2.0.0(cytoscape@3.34.0)(react@19.0.0-rc-f994737d14-20240522)
       react-dom:
         specifier: 19.0.0-rc-f994737d14-20240522
         version: 19.0.0-rc-f994737d14-20240522(react@19.0.0-rc-f994737d14-20240522)
@@ -47,8 +47,8 @@ importers:
         specifier: 1.7.24
         version: 1.7.24
       '@types/cytoscape':
-        specifier: 3.21.7
-        version: 3.21.7
+        specifier: 3.31.0
+        version: 3.31.0
       '@types/react':
         specifier: npm:types-react@19.0.0-rc.1
         version: types-react@19.0.0-rc.1
@@ -260,8 +260,9 @@ packages:
   '@types/conventional-commits-parser@5.0.0':
     resolution: {integrity: sha512-loB369iXNmAZglwWATL+WRe+CRMmmBPtpolYzIebFaX4YA3x+BEfLqhUAV9WanycKI3TG1IMr5bMJDajDKLlUQ==}
 
-  '@types/cytoscape@3.21.7':
-    resolution: {integrity: sha512-dP4UByJtfu5GjMJuv58yCIRxjCp4cP0Wp+Qd46L3Gom0hcV4OPmSOLqt83vArNcYRZLFCAyAk+lcC8oqQtcsqw==}
+  '@types/cytoscape@3.31.0':
+    resolution: {integrity: sha512-EXHOHxqQjGxLDEh5cP4te6J0bi7LbCzmZkzsR6f703igUac8UGMdEohMyU3GHAayCTZrLQOMnaE/lqB2Ekh8Ww==}
+    deprecated: This is a stub types definition. cytoscape provides its own type definitions, so you do not need this installed.
 
   '@types/eslint-scope@3.7.7':
     resolution: {integrity: sha512-MzMFlSLBqNF2gcHWO0G1vP/YQyfvrxZ0bF+u7mzUdZ1/xK4A4sru+nraZz5i3iEIk1l1uyicaDVTB4QbbEkAYg==}
@@ -714,8 +715,8 @@ packages:
     peerDependencies:
       cytoscape: ^3.2.0
 
-  cytoscape@3.28.1:
-    resolution: {integrity: sha512-xyItz4O/4zp9/239wCcH8ZcFuuZooEeF8KHRmzjDfGdXsj3OG9MFSMA0pJE0uX3uCN/ygof6hHf4L7lst+JaDg==}
+  cytoscape@3.34.0:
+    resolution: {integrity: sha512-62rNSrioXw93uliKFBwjukeQyeWwH2PqDrTac31r2P6464u3AUvTk0xS4LVvT251g7IgkFunrI48ZEZGjywSOg==}
     engines: {node: '>=0.10'}
 
   cz-conventional-changelog@3.3.0:
@@ -1045,9 +1046,6 @@ packages:
   he@1.2.0:
     resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
     hasBin: true
-
-  heap@0.2.7:
-    resolution: {integrity: sha512-2bsegYkkHO+h/9MGbn6KWcE45cHZgPANo5LXF7EvWdT0yT2EguSVO1nDgU5c8+ZOPwp2vMNa7YFsJhVcDR9Sdg==}
 
   homedir-polyfill@1.0.3:
     resolution: {integrity: sha512-eSmmWE5bZTK2Nou4g0AI3zZ9rswp7GRKoKXS1BLUkvPviOqs4YTN1djQIqrXy9k5gEtdLPy86JjRwsNM9tnDcA==}
@@ -1929,6 +1927,7 @@ packages:
 
   uuid@8.3.2:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
+    deprecated: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
     hasBin: true
 
   vary@1.1.2:
@@ -2225,7 +2224,9 @@ snapshots:
       '@types/node': 22.5.4
     optional: true
 
-  '@types/cytoscape@3.21.7': {}
+  '@types/cytoscape@3.31.0':
+    dependencies:
+      cytoscape: 3.34.0
 
   '@types/eslint-scope@3.7.7':
     dependencies:
@@ -2279,7 +2280,7 @@ snapshots:
 
   '@types/react-cytoscapejs@1.2.5':
     dependencies:
-      '@types/cytoscape': 3.21.7
+      '@types/cytoscape': 3.31.0
       '@types/react': types-react@19.0.0-rc.1
 
   '@types/retry@0.12.2': {}
@@ -2725,15 +2726,12 @@ snapshots:
     dependencies:
       csstype: 2.6.21
 
-  cytoscape-cose-bilkent@4.1.0(cytoscape@3.28.1):
+  cytoscape-cose-bilkent@4.1.0(cytoscape@3.34.0):
     dependencies:
       cose-base: 1.0.3
-      cytoscape: 3.28.1
+      cytoscape: 3.34.0
 
-  cytoscape@3.28.1:
-    dependencies:
-      heap: 0.2.7
-      lodash: 4.17.21
+  cytoscape@3.34.0: {}
 
   cz-conventional-changelog@3.3.0(@types/node@22.5.4)(typescript@5.3.3):
     dependencies:
@@ -3067,8 +3065,6 @@ snapshots:
       function-bind: 1.1.2
 
   he@1.2.0: {}
-
-  heap@0.2.7: {}
 
   homedir-polyfill@1.0.3:
     dependencies:
@@ -3565,9 +3561,9 @@ snapshots:
       iconv-lite: 0.4.24
       unpipe: 1.0.0
 
-  react-cytoscapejs@2.0.0(cytoscape@3.28.1)(react@19.0.0-rc-f994737d14-20240522):
+  react-cytoscapejs@2.0.0(cytoscape@3.34.0)(react@19.0.0-rc-f994737d14-20240522):
     dependencies:
-      cytoscape: 3.28.1
+      cytoscape: 3.34.0
       prop-types: 15.8.1
       react: 19.0.0-rc-f994737d14-20240522
 

@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "csx": "10.0.2",
-    "cytoscape": "3.28.1",
+    "cytoscape": "3.34.0",
     "cytoscape-cose-bilkent": "4.1.0",
     "react": "19.0.0-rc-f994737d14-20240522",
     "react-cytoscapejs": "2.0.0",
@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@swc/core": "1.7.24",
-    "@types/cytoscape": "3.21.7",
+    "@types/cytoscape": "3.31.0",
     "@types/react": "npm:types-react@19.0.0-rc.1",
     "@types/react-cytoscapejs": "1.2.5",
     "@types/react-dom": "npm:types-react-dom@19.0.0",
